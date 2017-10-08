@@ -3,6 +3,6 @@
 
 int main()
 {
-    dummy();
+  dummy();
     return 0;
 }
