@@ -1,0 +1,92 @@
+\hypertarget{class_sensor}{}\section{Sensor$<$ T $>$ Class Template Reference}
+\label{class_sensor}\index{Sensor$<$ T $>$@{Sensor$<$ T $>$}}
+
+
+Class for generic sensor. Particular sensor in the system will inherit this base class.  
+
+
+
+
+{\ttfamily \#include $<$sensor.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual auto \hyperlink{class_sensor_abdc2eb130cb935cb090470d1fe6cc499}{get\+Output} () -\/$>$ T=0
+\begin{DoxyCompactList}\small\item\em Function to get the output variables of the class. \end{DoxyCompactList}\item 
+virtual auto \hyperlink{class_sensor_a6482196cbd29fb6bdc0b03d8af26d501}{process} () -\/$>$ void=0
+\begin{DoxyCompactList}\small\item\em Function to do the process of respective class. \end{DoxyCompactList}\item 
+virtual auto \hyperlink{class_sensor_a7ae0a8c02805d3b2b8306d01da2a2db8}{is\+Alive} () -\/$>$ bool=0
+\begin{DoxyCompactList}\small\item\em Function to check whether the sensor is running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\\*
+class Sensor$<$ T $>$}
+
+Class for generic sensor. Particular sensor in the system will inherit this base class. 
+
+Definition at line 22 of file sensor.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Sensor@{Sensor}!get\+Output@{get\+Output}}
+\index{get\+Output@{get\+Output}!Sensor@{Sensor}}
+\subsubsection[{\texorpdfstring{get\+Output() -\/$>$ T=0}{getOutput() -> T=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual auto {\bf Sensor}$<$ T $>$\+::get\+Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$  T\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sensor_abdc2eb130cb935cb090470d1fe6cc499}{}\label{class_sensor_abdc2eb130cb935cb090470d1fe6cc499}
+
+
+Function to get the output variables of the class. 
+
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_ultrasonic_sensor_a0776a669d6c30958fe316cb2daa3e6e7}{Ultrasonic\+Sensor}, and \hyperlink{class_camera_a456e3f62048f2266e098489a068bda0e}{Camera}.
+
+\index{Sensor@{Sensor}!is\+Alive@{is\+Alive}}
+\index{is\+Alive@{is\+Alive}!Sensor@{Sensor}}
+\subsubsection[{\texorpdfstring{is\+Alive() -\/$>$ bool=0}{isAlive() -> bool=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual auto {\bf Sensor}$<$ T $>$\+::is\+Alive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$  bool\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sensor_a7ae0a8c02805d3b2b8306d01da2a2db8}{}\label{class_sensor_a7ae0a8c02805d3b2b8306d01da2a2db8}
+
+
+Function to check whether the sensor is running. 
+
+\begin{DoxyReturn}{Returns}
+bool\+: Return \char`\"{}true\char`\"{} if running, \char`\"{}false\char`\"{} otherwise 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_camera_a1b3b1ece3344ea84754aff31f048d55e}{Camera}, and \hyperlink{class_ultrasonic_sensor_af10dfe88aa79e9c108055d5b4b5144e9}{Ultrasonic\+Sensor}.
+
+\index{Sensor@{Sensor}!process@{process}}
+\index{process@{process}!Sensor@{Sensor}}
+\subsubsection[{\texorpdfstring{process() -\/$>$ void=0}{process() -> void=0}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual auto {\bf Sensor}$<$ T $>$\+::process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$  void\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_sensor_a6482196cbd29fb6bdc0b03d8af26d501}{}\label{class_sensor_a6482196cbd29fb6bdc0b03d8af26d501}
+
+
+Function to do the process of respective class. 
+
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_camera_a3af312509cb2a7167ad0dc6280cd9207}{Camera}, and \hyperlink{class_ultrasonic_sensor_af20b33a57f5b4522566d6856f6ca4428}{Ultrasonic\+Sensor}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/\hyperlink{sensor_8hpp}{sensor.\+hpp}\end{DoxyCompactItemize}

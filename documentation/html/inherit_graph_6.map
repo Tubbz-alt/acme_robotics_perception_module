@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_test_camera.html" title="Class for the testing of Camera class. Creates a protected camera object which can be used for testin..." alt="" coords="130,5,225,32"/>
+<area shape="rect" id="node3" href="$class_test_control_module.html" title="Class for testing the ControlModule of the code. Create instances of perception and control modules w..." alt="" coords="111,56,243,83"/>
+<area shape="rect" id="node4" href="$class_test_perception_module.html" title="Class to test the working of PerceptionModule. Create an instance of perception module which can be u..." alt="" coords="101,107,253,133"/>
+<area shape="rect" id="node5" href="$class_test_ultrasonic_sensor.html" title="Class to test the working of Ultrasonic sensor. Create an instance of ultrasonic sensor which can be ..." alt="" coords="103,157,251,184"/>
+</map>

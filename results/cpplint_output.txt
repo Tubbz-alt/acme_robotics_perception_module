@@ -1,0 +1,17 @@
+nrparikh@ubuntu:~/eclipse-workspace/neel_parikh_midterm_project/acme_robotics_perception_module$ ../cpplint.py --extensions=h,hpp,cpp $( find . -name *.h -or -name *.hpp -or -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/" )
+Done processing ./test/main.cpp
+Done processing ./test/test_control_module.cpp
+Done processing ./test/test_ultrasonic_sensor.cpp
+Done processing ./test/test_camera.cpp
+Done processing ./test/test_perception_module.cpp
+Done processing ./include/control_module.hpp
+Done processing ./include/ultrasonic_sensor.hpp
+Done processing ./include/sensor.hpp
+Done processing ./include/perception_module.hpp
+Done processing ./include/camera.hpp
+Done processing ./app/main.cpp
+Done processing ./app/control_module.cpp
+Done processing ./app/camera.cpp
+Done processing ./app/ultra_sensor.cpp
+Done processing ./app/perception_module.cpp
+Total errors found: 0

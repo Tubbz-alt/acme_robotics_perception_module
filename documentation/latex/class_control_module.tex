@@ -1,0 +1,252 @@
+\hypertarget{class_control_module}{}\section{Control\+Module Class Reference}
+\label{class_control_module}\index{Control\+Module@{Control\+Module}}
+
+
+Class for control module. This class generates the actions based on the inputs from ultrasonic sensor and camera.  
+
+
+
+
+{\ttfamily \#include $<$control\+\_\+module.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_control_module_a260b3e131b096cf456aff663aebfa6b4}{Control\+Module} ()
+\begin{DoxyCompactList}\small\item\em Constructor of the class \hyperlink{class_control_module}{Control\+Module}. \end{DoxyCompactList}\item 
+\hyperlink{class_control_module_ade41c6a3ce7c8e4df978c611bc0d9fa8}{$\sim$\+Control\+Module} ()
+\begin{DoxyCompactList}\small\item\em Destroys the object of the class \hyperlink{class_control_module}{Control\+Module}. \end{DoxyCompactList}\item 
+auto \hyperlink{class_control_module_a94f0a8b044f12df1c381655648e68aa5}{set\+Pointers} () -\/$>$ void
+\begin{DoxyCompactList}\small\item\em Create the pointers to the perception and ultrasonic sensor. \end{DoxyCompactList}\item 
+auto \hyperlink{class_control_module_a051b5a9bdf80ce3c21da8db10705740b}{is\+Alive} () -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em Determines if the module is running or not. \end{DoxyCompactList}\item 
+auto \hyperlink{class_control_module_a82c3a2a8d0140432b7dd364a4388fff2}{compute\+Action\+Center} (const std\+::pair$<$ int, int $>$ \&center) -\/$>$ void
+\begin{DoxyCompactList}\small\item\em Mehod to calculate the action based on the inputs. \end{DoxyCompactList}\item 
+auto \hyperlink{class_control_module_a8ded8dc8ebb29333bc104a26e835ce41}{compute\+Action\+Pt} (const std\+::vector$<$ std\+::pair$<$ int, int $>$$>$ \&line\+Pts) -\/$>$ void
+\begin{DoxyCompactList}\small\item\em Compute the action to be taken from the detected points on the line. \end{DoxyCompactList}\item 
+auto \hyperlink{class_control_module_af623430925750c3124253b705593cdce}{get\+Control\+Action} () -\/$>$ std\+::string
+\begin{DoxyCompactList}\small\item\em Gets the computed control action. \end{DoxyCompactList}\item 
+auto \hyperlink{class_control_module_a10094a24e4e1e674da0bb5d0f1ef5e58}{run\+Diagnostics} () -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em Function to check if all the modules are running. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_ultrasonic_sensor}{Ultrasonic\+Sensor} $>$ \hyperlink{class_control_module_ad446c4323ea97a807a9b355c2f121a20}{front\+\_\+sensor\+\_\+}
+\begin{DoxyCompactList}\small\item\em Front distance sensor. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_perception_module}{Perception\+Module} $>$ \hyperlink{class_control_module_a179995b24b2400b72b2cfd079b576782}{perception\+\_\+module\+\_\+}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_camera}{Camera} sensor module. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_control_module_acf268f1e0e9d27bff61e89c681a739a3}{control\+\_\+action\+\_\+}
+\begin{DoxyCompactList}\small\item\em Computed control action. \end{DoxyCompactList}\item 
+bool \hyperlink{class_control_module_af48419a814c008e4695bef60daf2a516}{is\+\_\+running\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for control module. This class generates the actions based on the inputs from ultrasonic sensor and camera. 
+
+Definition at line 31 of file control\+\_\+module.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Control\+Module@{Control\+Module}!Control\+Module@{Control\+Module}}
+\index{Control\+Module@{Control\+Module}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{Control\+Module()}{ControlModule()}}]{\setlength{\rightskip}{0pt plus 5cm}Control\+Module\+::\+Control\+Module (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_control_module_a260b3e131b096cf456aff663aebfa6b4}{}\label{class_control_module_a260b3e131b096cf456aff663aebfa6b4}
+
+
+Constructor of the class \hyperlink{class_control_module}{Control\+Module}. 
+
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing. 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file control\+\_\+module.\+cpp.
+
+\index{Control\+Module@{Control\+Module}!````~Control\+Module@{$\sim$\+Control\+Module}}
+\index{````~Control\+Module@{$\sim$\+Control\+Module}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{$\sim$\+Control\+Module()}{~ControlModule()}}]{\setlength{\rightskip}{0pt plus 5cm}Control\+Module\+::$\sim$\+Control\+Module (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_control_module_ade41c6a3ce7c8e4df978c611bc0d9fa8}{}\label{class_control_module_ade41c6a3ce7c8e4df978c611bc0d9fa8}
+
+
+Destroys the object of the class \hyperlink{class_control_module}{Control\+Module}. 
+
+
+
+Definition at line 25 of file control\+\_\+module.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Control\+Module@{Control\+Module}!compute\+Action\+Center@{compute\+Action\+Center}}
+\index{compute\+Action\+Center@{compute\+Action\+Center}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{compute\+Action\+Center(const std\+::pair$<$ int, int $>$ \&center) -\/$>$ void}{computeActionCenter(const std::pair< int, int > &center) -> void}}]{\setlength{\rightskip}{0pt plus 5cm}auto Control\+Module\+::compute\+Action\+Center (
+\begin{DoxyParamCaption}
+\item[{const std\+::pair$<$ int, int $>$ \&}]{center}
+\end{DoxyParamCaption}
+) -\/$>$  void}\hypertarget{class_control_module_a82c3a2a8d0140432b7dd364a4388fff2}{}\label{class_control_module_a82c3a2a8d0140432b7dd364a4388fff2}
+
+
+Mehod to calculate the action based on the inputs. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em center} & Center of the detected contour. \\
+\hline
+\mbox{\tt in}  & {\em curr\+\_\+dist} & Current distance reading.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing. 
+\end{DoxyReturn}
+\index{Control\+Module@{Control\+Module}!compute\+Action\+Pt@{compute\+Action\+Pt}}
+\index{compute\+Action\+Pt@{compute\+Action\+Pt}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{compute\+Action\+Pt(const std\+::vector$<$ std\+::pair$<$ int, int $>$$>$ \&line\+Pts) -\/$>$ void}{computeActionPt(const std::vector< std::pair< int, int >> &linePts) -> void}}]{\setlength{\rightskip}{0pt plus 5cm}auto Control\+Module\+::compute\+Action\+Pt (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ std\+::pair$<$ int, int $>$$>$ \&}]{line\+Pts}
+\end{DoxyParamCaption}
+) -\/$>$ void}\hypertarget{class_control_module_a8ded8dc8ebb29333bc104a26e835ce41}{}\label{class_control_module_a8ded8dc8ebb29333bc104a26e835ce41}
+
+
+Compute the action to be taken from the detected points on the line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em line\+Pts} & Vector of pair of points on the line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file control\+\_\+module.\+cpp.
+
+\index{Control\+Module@{Control\+Module}!get\+Control\+Action@{get\+Control\+Action}}
+\index{get\+Control\+Action@{get\+Control\+Action}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{get\+Control\+Action() -\/$>$ std\+::string}{getControlAction() -> std::string}}]{\setlength{\rightskip}{0pt plus 5cm}auto Control\+Module\+::get\+Control\+Action (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$ std\+::string}\hypertarget{class_control_module_af623430925750c3124253b705593cdce}{}\label{class_control_module_af623430925750c3124253b705593cdce}
+
+
+Gets the computed control action. 
+
+\begin{DoxyReturn}{Returns}
+string\+: Return the computed control action. 
+\end{DoxyReturn}
+
+
+Definition at line 142 of file control\+\_\+module.\+cpp.
+
+\index{Control\+Module@{Control\+Module}!is\+Alive@{is\+Alive}}
+\index{is\+Alive@{is\+Alive}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{is\+Alive() -\/$>$ bool}{isAlive() -> bool}}]{\setlength{\rightskip}{0pt plus 5cm}auto Control\+Module\+::is\+Alive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$ bool}\hypertarget{class_control_module_a051b5a9bdf80ce3c21da8db10705740b}{}\label{class_control_module_a051b5a9bdf80ce3c21da8db10705740b}
+
+
+Determines if the module is running or not. 
+
+\begin{DoxyReturn}{Returns}
+bool\+: Return \char`\"{}true\char`\"{} if the module is running, \char`\"{}false\char`\"{} otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file control\+\_\+module.\+cpp.
+
+\index{Control\+Module@{Control\+Module}!run\+Diagnostics@{run\+Diagnostics}}
+\index{run\+Diagnostics@{run\+Diagnostics}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{run\+Diagnostics() -\/$>$ bool}{runDiagnostics() -> bool}}]{\setlength{\rightskip}{0pt plus 5cm}auto Control\+Module\+::run\+Diagnostics (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$ bool}\hypertarget{class_control_module_a10094a24e4e1e674da0bb5d0f1ef5e58}{}\label{class_control_module_a10094a24e4e1e674da0bb5d0f1ef5e58}
+
+
+Function to check if all the modules are running. 
+
+\begin{DoxyReturn}{Returns}
+bool\+: Return true if all modules are up, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file control\+\_\+module.\+cpp.
+
+\index{Control\+Module@{Control\+Module}!set\+Pointers@{set\+Pointers}}
+\index{set\+Pointers@{set\+Pointers}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{set\+Pointers() -\/$>$ void}{setPointers() -> void}}]{\setlength{\rightskip}{0pt plus 5cm}auto Control\+Module\+::set\+Pointers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$ void}\hypertarget{class_control_module_a94f0a8b044f12df1c381655648e68aa5}{}\label{class_control_module_a94f0a8b044f12df1c381655648e68aa5}
+
+
+Create the pointers to the perception and ultrasonic sensor. 
+
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file control\+\_\+module.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{Control\+Module@{Control\+Module}!control\+\_\+action\+\_\+@{control\+\_\+action\+\_\+}}
+\index{control\+\_\+action\+\_\+@{control\+\_\+action\+\_\+}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{control\+\_\+action\+\_\+}{control_action_}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Control\+Module\+::control\+\_\+action\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_control_module_acf268f1e0e9d27bff61e89c681a739a3}{}\label{class_control_module_acf268f1e0e9d27bff61e89c681a739a3}
+
+
+Computed control action. 
+
+
+
+Definition at line 90 of file control\+\_\+module.\+hpp.
+
+\index{Control\+Module@{Control\+Module}!front\+\_\+sensor\+\_\+@{front\+\_\+sensor\+\_\+}}
+\index{front\+\_\+sensor\+\_\+@{front\+\_\+sensor\+\_\+}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{front\+\_\+sensor\+\_\+}{front_sensor_}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Ultrasonic\+Sensor}$>$ Control\+Module\+::front\+\_\+sensor\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_control_module_ad446c4323ea97a807a9b355c2f121a20}{}\label{class_control_module_ad446c4323ea97a807a9b355c2f121a20}
+
+
+Front distance sensor. 
+
+
+
+Definition at line 87 of file control\+\_\+module.\+hpp.
+
+\index{Control\+Module@{Control\+Module}!is\+\_\+running\+\_\+@{is\+\_\+running\+\_\+}}
+\index{is\+\_\+running\+\_\+@{is\+\_\+running\+\_\+}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{is\+\_\+running\+\_\+}{is_running_}}]{\setlength{\rightskip}{0pt plus 5cm}bool Control\+Module\+::is\+\_\+running\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_control_module_af48419a814c008e4695bef60daf2a516}{}\label{class_control_module_af48419a814c008e4695bef60daf2a516}
+Flag to test if the perception module is running or not. 
+
+Definition at line 91 of file control\+\_\+module.\+hpp.
+
+\index{Control\+Module@{Control\+Module}!perception\+\_\+module\+\_\+@{perception\+\_\+module\+\_\+}}
+\index{perception\+\_\+module\+\_\+@{perception\+\_\+module\+\_\+}!Control\+Module@{Control\+Module}}
+\subsubsection[{\texorpdfstring{perception\+\_\+module\+\_\+}{perception_module_}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Perception\+Module}$>$ Control\+Module\+::perception\+\_\+module\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_control_module_a179995b24b2400b72b2cfd079b576782}{}\label{class_control_module_a179995b24b2400b72b2cfd079b576782}
+
+
+\hyperlink{class_camera}{Camera} sensor module. 
+
+
+
+Definition at line 89 of file control\+\_\+module.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/\hyperlink{control__module_8hpp}{control\+\_\+module.\+hpp}\item 
+/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/app/\hyperlink{control__module_8cpp}{control\+\_\+module.\+cpp}\end{DoxyCompactItemize}

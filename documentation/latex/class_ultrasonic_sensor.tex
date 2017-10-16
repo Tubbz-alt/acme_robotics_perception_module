@@ -1,0 +1,266 @@
+\hypertarget{class_ultrasonic_sensor}{}\section{Ultrasonic\+Sensor Class Reference}
+\label{class_ultrasonic_sensor}\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+
+
+{\ttfamily \#include $<$ultrasonic\+\_\+sensor.\+hpp$>$}
+
+
+
+Inheritance diagram for Ultrasonic\+Sensor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_ultrasonic_sensor__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ultrasonic_sensor_afc21cb39ba75dfd008e1e82c82d2e61f}{Ultrasonic\+Sensor} ()
+\begin{DoxyCompactList}\small\item\em Constructor of the class \hyperlink{class_ultrasonic_sensor}{Ultrasonic\+Sensor}. Set the is\+\_\+running\+\_\+ flag to true. \end{DoxyCompactList}\item 
+\hyperlink{class_ultrasonic_sensor_aec2722048b7070bd2b0f665b210f0d1a}{$\sim$\+Ultrasonic\+Sensor} ()
+\begin{DoxyCompactList}\small\item\em Destructor of the class \hyperlink{class_ultrasonic_sensor}{Ultrasonic\+Sensor}. \end{DoxyCompactList}\item 
+auto \hyperlink{class_ultrasonic_sensor_abb877ee0a45cc3a1856a13536c95f474}{set\+Seed} (const int \&seed) -\/$>$ void
+\begin{DoxyCompactList}\small\item\em Method to set constant seed if needed. \end{DoxyCompactList}\item 
+auto \hyperlink{class_ultrasonic_sensor_af20b33a57f5b4522566d6856f6ca4428}{process} () -\/$>$ void
+\begin{DoxyCompactList}\small\item\em Override the virtual method \char`\"{}process\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This method takes the current distance reading and updates its reading value. \end{DoxyCompactList}\item 
+auto \hyperlink{class_ultrasonic_sensor_af10dfe88aa79e9c108055d5b4b5144e9}{is\+Alive} () -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em Override the virtual method \char`\"{}is\+Alive\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This method checks if the sensor is running or not. \end{DoxyCompactList}\item 
+auto \hyperlink{class_ultrasonic_sensor_a831b3ae96fb0537d8a7e7c12e8214f66}{set\+Max\+Distance} (float max\+Dist) -\/$>$ void
+\begin{DoxyCompactList}\small\item\em Method to set the max distance parameter of the class. \end{DoxyCompactList}\item 
+auto \hyperlink{class_ultrasonic_sensor_af1ea4298d3ac580095e59d4b63e9076c}{get\+Max\+Distance} () -\/$>$ float
+\begin{DoxyCompactList}\small\item\em Method to get the max distance parameter of the class. \end{DoxyCompactList}\item 
+auto \hyperlink{class_ultrasonic_sensor_a0776a669d6c30958fe316cb2daa3e6e7}{get\+Output} () -\/$>$ float
+\begin{DoxyCompactList}\small\item\em Override the method \char`\"{}get\+Output\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This method returns the output value of the class which is the current distance reading taken by the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_ultrasonic_sensor_a7a41e3e74c23db857fd6cc3728439461}{max\+\_\+distance\+\_\+}
+\begin{DoxyCompactList}\small\item\em Maximum distance that can be read by the sensor. \end{DoxyCompactList}\item 
+float \hyperlink{class_ultrasonic_sensor_a96a5d6ca72fcbe545ea88f504b24b44a}{output\+\_\+current\+\_\+distance\+\_\+}
+\item 
+bool \hyperlink{class_ultrasonic_sensor_a7d98b5005d41e9bb8fd84c71dde4079a}{is\+\_\+running\+\_\+}
+\item 
+unsigned int \hyperlink{class_ultrasonic_sensor_a3d7bb6ec05405169a0ea40432a79e318}{seed\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file ultrasonic\+\_\+sensor.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{Ultrasonic\+Sensor()}{UltrasonicSensor()}}]{\setlength{\rightskip}{0pt plus 5cm}Ultrasonic\+Sensor\+::\+Ultrasonic\+Sensor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ultrasonic_sensor_afc21cb39ba75dfd008e1e82c82d2e61f}{}\label{class_ultrasonic_sensor_afc21cb39ba75dfd008e1e82c82d2e61f}
+
+
+Constructor of the class \hyperlink{class_ultrasonic_sensor}{Ultrasonic\+Sensor}. Set the is\+\_\+running\+\_\+ flag to true. 
+
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing. 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file ultra\+\_\+sensor.\+cpp.
+
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!````~Ultrasonic\+Sensor@{$\sim$\+Ultrasonic\+Sensor}}
+\index{````~Ultrasonic\+Sensor@{$\sim$\+Ultrasonic\+Sensor}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{$\sim$\+Ultrasonic\+Sensor()}{~UltrasonicSensor()}}]{\setlength{\rightskip}{0pt plus 5cm}Ultrasonic\+Sensor\+::$\sim$\+Ultrasonic\+Sensor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_ultrasonic_sensor_aec2722048b7070bd2b0f665b210f0d1a}{}\label{class_ultrasonic_sensor_aec2722048b7070bd2b0f665b210f0d1a}
+
+
+Destructor of the class \hyperlink{class_ultrasonic_sensor}{Ultrasonic\+Sensor}. 
+
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing. 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file ultra\+\_\+sensor.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!get\+Max\+Distance@{get\+Max\+Distance}}
+\index{get\+Max\+Distance@{get\+Max\+Distance}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{get\+Max\+Distance() -\/$>$ float}{getMaxDistance() -> float}}]{\setlength{\rightskip}{0pt plus 5cm}auto Ultrasonic\+Sensor\+::get\+Max\+Distance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$ float}\hypertarget{class_ultrasonic_sensor_af1ea4298d3ac580095e59d4b63e9076c}{}\label{class_ultrasonic_sensor_af1ea4298d3ac580095e59d4b63e9076c}
+
+
+Method to get the max distance parameter of the class. 
+
+\begin{DoxyReturn}{Returns}
+float\+: Return the maximum distance that can be read by the sensor(max\+\_\+distance\+\_\+). 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file ultra\+\_\+sensor.\+cpp.
+
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!get\+Output@{get\+Output}}
+\index{get\+Output@{get\+Output}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{get\+Output() -\/$>$ float}{getOutput() -> float}}]{\setlength{\rightskip}{0pt plus 5cm}auto Ultrasonic\+Sensor\+::get\+Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$ float\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ultrasonic_sensor_a0776a669d6c30958fe316cb2daa3e6e7}{}\label{class_ultrasonic_sensor_a0776a669d6c30958fe316cb2daa3e6e7}
+
+
+Override the method \char`\"{}get\+Output\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This method returns the output value of the class which is the current distance reading taken by the sensor. 
+
+\begin{DoxyReturn}{Returns}
+float\+: Return the current distance read by the sensor(output\+\_\+current\+\_\+distance\+\_\+). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_sensor_abdc2eb130cb935cb090470d1fe6cc499}{Sensor$<$ float $>$}.
+
+
+
+Definition at line 55 of file ultra\+\_\+sensor.\+cpp.
+
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!is\+Alive@{is\+Alive}}
+\index{is\+Alive@{is\+Alive}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{is\+Alive() -\/$>$ bool}{isAlive() -> bool}}]{\setlength{\rightskip}{0pt plus 5cm}auto Ultrasonic\+Sensor\+::is\+Alive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$ bool\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ultrasonic_sensor_af10dfe88aa79e9c108055d5b4b5144e9}{}\label{class_ultrasonic_sensor_af10dfe88aa79e9c108055d5b4b5144e9}
+
+
+Override the virtual method \char`\"{}is\+Alive\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This method checks if the sensor is running or not. 
+
+\begin{DoxyReturn}{Returns}
+bool\+: Return \char`\"{}true\char`\"{} if the sensor is running, \char`\"{}false\char`\"{} otherwise. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_sensor_a7ae0a8c02805d3b2b8306d01da2a2db8}{Sensor$<$ float $>$}.
+
+
+
+Definition at line 43 of file ultra\+\_\+sensor.\+cpp.
+
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!process@{process}}
+\index{process@{process}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{process() -\/$>$ void}{process() -> void}}]{\setlength{\rightskip}{0pt plus 5cm}auto Ultrasonic\+Sensor\+::process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) -\/$>$ void\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_ultrasonic_sensor_af20b33a57f5b4522566d6856f6ca4428}{}\label{class_ultrasonic_sensor_af20b33a57f5b4522566d6856f6ca4428}
+
+
+Override the virtual method \char`\"{}process\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This method takes the current distance reading and updates its reading value. 
+
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_sensor_a6482196cbd29fb6bdc0b03d8af26d501}{Sensor$<$ float $>$}.
+
+
+
+Definition at line 29 of file ultra\+\_\+sensor.\+cpp.
+
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!set\+Max\+Distance@{set\+Max\+Distance}}
+\index{set\+Max\+Distance@{set\+Max\+Distance}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{set\+Max\+Distance(float max\+Dist) -\/$>$ void}{setMaxDistance(float maxDist) -> void}}]{\setlength{\rightskip}{0pt plus 5cm}auto Ultrasonic\+Sensor\+::set\+Max\+Distance (
+\begin{DoxyParamCaption}
+\item[{float}]{max\+Dist}
+\end{DoxyParamCaption}
+) -\/$>$ void}\hypertarget{class_ultrasonic_sensor_a831b3ae96fb0537d8a7e7c12e8214f66}{}\label{class_ultrasonic_sensor_a831b3ae96fb0537d8a7e7c12e8214f66}
+
+
+Method to set the max distance parameter of the class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Dist} & Pass the value which is set to be as maximum distance\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing. 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file ultra\+\_\+sensor.\+cpp.
+
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!set\+Seed@{set\+Seed}}
+\index{set\+Seed@{set\+Seed}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{set\+Seed(const int \&seed) -\/$>$ void}{setSeed(const int &seed) -> void}}]{\setlength{\rightskip}{0pt plus 5cm}auto Ultrasonic\+Sensor\+::set\+Seed (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{seed}
+\end{DoxyParamCaption}
+) -\/$>$ void}\hypertarget{class_ultrasonic_sensor_abb877ee0a45cc3a1856a13536c95f474}{}\label{class_ultrasonic_sensor_abb877ee0a45cc3a1856a13536c95f474}
+
+
+Method to set constant seed if needed. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em seed} & Constant value to be set as seed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file ultra\+\_\+sensor.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!is\+\_\+running\+\_\+@{is\+\_\+running\+\_\+}}
+\index{is\+\_\+running\+\_\+@{is\+\_\+running\+\_\+}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{is\+\_\+running\+\_\+}{is_running_}}]{\setlength{\rightskip}{0pt plus 5cm}bool Ultrasonic\+Sensor\+::is\+\_\+running\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ultrasonic_sensor_a7d98b5005d41e9bb8fd84c71dde4079a}{}\label{class_ultrasonic_sensor_a7d98b5005d41e9bb8fd84c71dde4079a}
+Flag to test if the ultrasonic sensor is running or not. 
+
+Definition at line 89 of file ultrasonic\+\_\+sensor.\+hpp.
+
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!max\+\_\+distance\+\_\+@{max\+\_\+distance\+\_\+}}
+\index{max\+\_\+distance\+\_\+@{max\+\_\+distance\+\_\+}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{max\+\_\+distance\+\_\+}{max_distance_}}]{\setlength{\rightskip}{0pt plus 5cm}float Ultrasonic\+Sensor\+::max\+\_\+distance\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ultrasonic_sensor_a7a41e3e74c23db857fd6cc3728439461}{}\label{class_ultrasonic_sensor_a7a41e3e74c23db857fd6cc3728439461}
+
+
+Maximum distance that can be read by the sensor. 
+
+
+
+Definition at line 86 of file ultrasonic\+\_\+sensor.\+hpp.
+
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!output\+\_\+current\+\_\+distance\+\_\+@{output\+\_\+current\+\_\+distance\+\_\+}}
+\index{output\+\_\+current\+\_\+distance\+\_\+@{output\+\_\+current\+\_\+distance\+\_\+}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{output\+\_\+current\+\_\+distance\+\_\+}{output_current_distance_}}]{\setlength{\rightskip}{0pt plus 5cm}float Ultrasonic\+Sensor\+::output\+\_\+current\+\_\+distance\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ultrasonic_sensor_a96a5d6ca72fcbe545ea88f504b24b44a}{}\label{class_ultrasonic_sensor_a96a5d6ca72fcbe545ea88f504b24b44a}
+Current distance reading. Output of the class. 
+
+Definition at line 87 of file ultrasonic\+\_\+sensor.\+hpp.
+
+\index{Ultrasonic\+Sensor@{Ultrasonic\+Sensor}!seed\+\_\+@{seed\+\_\+}}
+\index{seed\+\_\+@{seed\+\_\+}!Ultrasonic\+Sensor@{Ultrasonic\+Sensor}}
+\subsubsection[{\texorpdfstring{seed\+\_\+}{seed_}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Ultrasonic\+Sensor\+::seed\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_ultrasonic_sensor_a3d7bb6ec05405169a0ea40432a79e318}{}\label{class_ultrasonic_sensor_a3d7bb6ec05405169a0ea40432a79e318}
+
+
+Definition at line 91 of file ultrasonic\+\_\+sensor.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/\hyperlink{ultrasonic__sensor_8hpp}{ultrasonic\+\_\+sensor.\+hpp}\item 
+/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/app/\hyperlink{ultra__sensor_8cpp}{ultra\+\_\+sensor.\+cpp}\end{DoxyCompactItemize}

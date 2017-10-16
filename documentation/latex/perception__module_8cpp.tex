@@ -1,0 +1,55 @@
+\hypertarget{perception__module_8cpp}{}\section{/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/app/perception\+\_\+module.cpp File Reference}
+\label{perception__module_8cpp}\index{/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/app/perception\+\_\+module.\+cpp@{/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/app/perception\+\_\+module.\+cpp}}
+
+
+D\+E\+S\+C\+R\+I\+P\+T\+I\+ON Implementation file for the class \hyperlink{class_perception_module}{Perception\+Module}. Uncomment the D\+E\+B\+U\+G\+\_\+\+P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+LE to debug the module.  
+
+
+{\ttfamily \#include \char`\"{}perception\+\_\+module.\+hpp\char`\"{}}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for perception\+\_\+module.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{perception__module_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{perception__module_8cpp_ae53f9832578a5e23f97ce875eb567bb1}{P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+D\+E\+B\+UG}
+\item 
+\#define \hyperlink{perception__module_8cpp_a8efa12d50d77af44d795a4b3c50f45aa}{P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+U\+S\+E\+\_\+\+L\+I\+N\+E\+\_\+\+P\+TS}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+D\+E\+S\+C\+R\+I\+P\+T\+I\+ON Implementation file for the class \hyperlink{class_perception_module}{Perception\+Module}. Uncomment the D\+E\+B\+U\+G\+\_\+\+P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+LE to debug the module. 
+
+\begin{DoxyAuthor}{Author}
+nrparikh 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+M\+IT license 
+\end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\index{perception\+\_\+module.\+cpp@{perception\+\_\+module.\+cpp}!P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+D\+E\+B\+UG@{P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+D\+E\+B\+UG}}
+\index{P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+D\+E\+B\+UG@{P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+D\+E\+B\+UG}!perception\+\_\+module.\+cpp@{perception\+\_\+module.\+cpp}}
+\subsubsection[{\texorpdfstring{P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+D\+E\+B\+UG}{PERCEPTION_MODULE_DEBUG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+D\+E\+B\+UG}\hypertarget{perception__module_8cpp_ae53f9832578a5e23f97ce875eb567bb1}{}\label{perception__module_8cpp_ae53f9832578a5e23f97ce875eb567bb1}
+
+
+Definition at line 18 of file perception\+\_\+module.\+cpp.
+
+\index{perception\+\_\+module.\+cpp@{perception\+\_\+module.\+cpp}!P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+U\+S\+E\+\_\+\+L\+I\+N\+E\+\_\+\+P\+TS@{P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+U\+S\+E\+\_\+\+L\+I\+N\+E\+\_\+\+P\+TS}}
+\index{P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+U\+S\+E\+\_\+\+L\+I\+N\+E\+\_\+\+P\+TS@{P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+U\+S\+E\+\_\+\+L\+I\+N\+E\+\_\+\+P\+TS}!perception\+\_\+module.\+cpp@{perception\+\_\+module.\+cpp}}
+\subsubsection[{\texorpdfstring{P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+U\+S\+E\+\_\+\+L\+I\+N\+E\+\_\+\+P\+TS}{PERCEPTION_MODULE_USE_LINE_PTS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+E\+R\+C\+E\+P\+T\+I\+O\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+U\+S\+E\+\_\+\+L\+I\+N\+E\+\_\+\+P\+TS}\hypertarget{perception__module_8cpp_a8efa12d50d77af44d795a4b3c50f45aa}{}\label{perception__module_8cpp_a8efa12d50d77af44d795a4b3c50f45aa}
+
+
+Definition at line 19 of file perception\+\_\+module.\+cpp.
+
