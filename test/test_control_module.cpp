@@ -12,28 +12,37 @@
 #include "control_module.hpp"
 #include "perception_module.hpp"
 /**
- * @brief      Class for testing the ControlModule of the code
+ * @brief      Class for testing the ControlModule of the code. Create instances
+ * of perception and control modules which can be used later for testing.
  */
 class TestControlModule : public ::testing::Test {
  protected:
   ControlModule cm;     // Create instance of ControlModule class
   PerceptionModule pm;  // Create instance of PerceptionModule class
 };
-
+/**
+ * @brief      Dummy test to check the working of tests
+ */
 TEST_F(TestControlModule, dummyTest) {
   EXPECT_EQ(1, 1);  // Dummy test to check working of the file
 }
-
+/**
+ * @brief      Test to check the working of control module
+ */
 TEST_F(TestControlModule, isAlive) {
   // Test to check whether control module is running or not
   EXPECT_EQ(cm.isAlive(), true);
 }
-
+/**
+ * @brief      Test to run diagnostic tests for all modules 
+ */
 TEST_F(TestControlModule, diagnosticTest) {
   // Test to check if all modules are working
   EXPECT_EQ(cm.runDiagnostics(), true);
 }
-
+/**
+ * @brief      Test to check the working of the control module.
+ */
 TEST_F(TestControlModule, processWorking) {
   pm.computeLinePts();  // Detect the line in the input image and compute points
                         // on it
