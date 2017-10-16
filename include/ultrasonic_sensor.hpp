@@ -14,10 +14,13 @@
 #ifndef INCLUDE_ULTRASONIC_SENSOR_HPP_
 #define INCLUDE_ULTRASONIC_SENSOR_HPP_
 
+#include <stdlib.h>
+#include <ctime>
+#include <iostream>
+
 #include "sensor.hpp"
 
-// template <class T>
-class UltrasonicSensor : public Sensor <float>{
+class UltrasonicSensor : public Sensor<float> {
  public:
   /**
    * @brief Constructor of the class UltrasonicSensor. Set the is_running_ flag
@@ -27,21 +30,19 @@ class UltrasonicSensor : public Sensor <float>{
    */
   UltrasonicSensor();
   /**
-   * @brief Constructor of the class UltrasonicSensor. Set the max_distance_ and
-   * is_running_ variables
-   *
-   * @param[in] maxDist: Pass the maximum distance that can be read by ultrasonic
-   * sensor
-   *
-   * @return void: Return nothing.
-   */
-  UltrasonicSensor(float maxDist);
-  /**
    * @brief Destructor of the class UltrasonicSensor
    *
    * @return void: Return nothing.
    */
   ~UltrasonicSensor();
+  /**
+   * @brief      Method to set constant seed if needed
+   *
+   * @param[in]  seed: Constant value to be set as seed
+   *
+   * @return     void: Return nothing
+   */
+  auto setSeed(const int &seed) -> void;
   /**
    * @brief Override the virtual method "process" of Sensor class. This method
    * takes the current distance reading and updates its reading value.
@@ -87,6 +88,7 @@ class UltrasonicSensor : public Sensor <float>{
                                    /// class.
   bool is_running_;  ///< Flag to test if the ultrasonic sensor is running or
                      /// not.
+  unsigned int seed_;
 };
 
 #endif  // INCLUDE_ULTRASONIC_SENSOR_HPP_

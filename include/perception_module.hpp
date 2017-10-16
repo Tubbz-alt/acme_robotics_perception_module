@@ -14,9 +14,13 @@
 #ifndef INCLUDE_PERCEPTION_MODULE_HPP_
 #define INCLUDE_PERCEPTION_MODULE_HPP_
 
-#include "camera.hpp"
+#include <opencv2/imgcodecs.hpp>
 
+#include <memory>
 #include <utility>
+#include <vector>
+
+#include "camera.hpp"
 
 /**
  * @brief      Class for perception module. This class finds the contours and
@@ -37,6 +41,12 @@ class PerceptionModule {
    */
   ~PerceptionModule();
   /**
+   * @brief      Create a pointer to camera object
+   *
+   * @return     void: Return nothing
+   */
+  auto setCameraObj() -> void;
+  /**
  * @brief      Determines if the module is running or not.
  *
  * @return     bool: Return "true" if the module is running, "false"
@@ -44,24 +54,69 @@ class PerceptionModule {
  */
   auto isAlive() -> bool;
   /**
+   * @brief      Function to detect the contours in the incoming frame.
+   *
+   * @param[in]  raw_image: The image in which contours are to be found.
+   *
+   * @return     void: Return nothing.
+   */
+  auto detectContours(const cv::Mat &raw_image) -> void;
+  /**
    * @brief      Method to get the center of the detected contours.
    *
    * @param[in]  raw_image: The image which is to be processed.
    *
    * @return     void: Return nothing.
    */
-  auto detectCenter(cv::Mat raw_image) -> void;
+  auto detectCenter() -> void;
+  /**
+   * @brief      Gets the output image from camera.
+   *
+   * @return     cv::Mat: Return the output image from camera.
+   */
+  auto getCameraImage() -> cv::Mat;
+  /**
+   * @brief      Finds the best fitting line using the Hough transforms and
+   * returns the points on the line
+   *
+   * @return     void: Return nothing
+   */
+  auto computeLinePts() -> void;
+  /**
+   * @brief      Function to return the points on the detected line.
+   *
+   * @return     std::vector<std::pair<int, int>>: Return vector of pair of the
+   * points on the detected line.
+   */
+  auto getPoints() -> std::vector<std::pair<int, int>>;
   /**
    * @brief      Gets the location of the center of the contour.
    *
    * @return     std::pair<int>: Return the center of the contour.
    */
   auto getCenter() -> std::pair<int, int>;
+  /**
+   * @brief      Function to check if camera is running or not
+   *
+   * @return     bool: Return the value returned by Camera::isAlive
+   */
+  auto cameraAlive() -> bool;
 
  private:
-  Camera camera_obj_;           ///< Object of the Camera sensor.
-  std::pair<int, int> center_;  ///< Center of the detected contour.
+  std::unique_ptr<Camera> camera_obj_;  ///< Object of the Camera sensor.
+  std::vector<std::vector<cv::Point>> contours_;  ///< Vectors of contours.
+  std::vector<cv::Vec4i> heirarchy_;              ///< Heirarchy of contours.
+  std::pair<int, int> center_;
+  cv::Mat contour_image_;       ///< Image containing detected contours.
+  bool contour_detected_;       ///< Flag to indicated whether the contour is
+                                /// detected or not.
+  int largest_contour_id_;      ///< ID of the largest contour detected.
+  float largest_contour_area_;  ///< Area of the largest contour detected.
+  std::vector<cv::Point>
+      largest_contour_;  ///< Largest contour detected in the image.
   bool is_running_;  ///< Flag to test if the perception module is running or
                      /// not.
+  std::vector<cv::Vec4i> lines_;
+  std::vector<std::pair<int, int>> points_;  ///< Vector of points of line.
 };
 #endif  //  INCLUDE_PERCEPTION_MODULE_HPP_

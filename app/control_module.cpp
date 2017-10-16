@@ -4,27 +4,41 @@
  * @copyright MIT license
  *
  * @brief DESCRIPTION
- * Function implementation for the class "ControlModule".
+ * Implementation file for the class ControlModule. The class computes the
+ * action based on the readings from camera and ultrasonic sensor.
  *
  */
 
 #include "control_module.hpp"
+#include <memory>
+#include <string>
+#include <utility>
+#include <vector>
 
 ControlModule::ControlModule() {
-  // TODO: Implement contructor
+  is_running_ = true;  // Set the alive flag
 }
 
-ControlModule::~ControlModule() {
-  // TODO: Implement destructor if needed
+ControlModule::~ControlModule() {}
+
+auto ControlModule::setPointers() -> void {
 }
 
-auto ControlModule::isAlive() -> bool { return is_running_; }
+auto ControlModule::runDiagnostics() -> bool {
+}
 
-auto ControlModule::computeAction(std::pair<int, int> center, float curr_dist)
+auto ControlModule::isAlive() -> bool {
+  return is_running_;  // Return the alive flag
+}
+
+auto ControlModule::computeActionCenter(const std::pair<int, int> &center)
     -> void {
-  // TODO: Implmenet the method to compute the action
+}
+
+auto ControlModule::computeActionPt(
+    const std::vector<std::pair<int, int> > &linePts) -> void {
 }
 
 auto ControlModule::getControlAction() -> std::string {
-  return control_action_;
+  return control_action_;  // Return the calculated control action
 }

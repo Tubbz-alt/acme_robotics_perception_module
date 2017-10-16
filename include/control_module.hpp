@@ -14,10 +14,15 @@
 #ifndef INCLUDE_CONTROL_MODULE_HPP_
 #define INCLUDE_CONTROL_MODULE_HPP_
 
+#include <math.h>
+#include <iostream>
+#include <memory>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "perception_module.hpp"
 #include "ultrasonic_sensor.hpp"
-
-#include <string>
 
 /**
  * @brief      Class for control module. This class generates the actions based
@@ -35,6 +40,12 @@ class ControlModule {
    */
   ~ControlModule();
   /**
+   * @brief      Create the pointers to the perception and ultrasonic sensor
+   *
+   * @return     void: Return nothing
+   */
+  auto setPointers() -> void;
+  /**
    * @brief      Determines if the module is running or not.
    *
    * @return     bool: Return "true" if the module is running, "false"
@@ -49,19 +60,35 @@ class ControlModule {
    *
    * @return     void: Return nothing.
    */
-  auto computeAction(std::pair<int, int> center, float curr_dist) -> void;
+  auto computeActionCenter(const std::pair<int, int> &center) -> void;
+  /**
+   * @brief      Compute the action to be taken from the detected points on the
+   * line
+   *
+   * @param[in]  linePts: Vector of pair of points on the line
+   *
+   * @return     void: Return nothing
+   */
+  auto computeActionPt(const std::vector<std::pair<int, int>> &linePts) -> void;
   /**
    * @brief      Gets the computed control action.
    *
    * @return     string: Return the computed control action.
    */
   auto getControlAction() -> std::string;
+  /**
+   * @brief      Function to check if all the modules are running
+   *
+   * @return     bool: Return true if all modules are up, false otherwise
+   */
+  auto runDiagnostics() -> bool;
 
  private:
-  UltrasonicSensor front_sensor_;       ///< Front distance sensor.
-  PerceptionModule perception_module_;  ///< Camera sensor module.
-  std::string control_action_;          ///< Computed control action.
+  std::unique_ptr<UltrasonicSensor> front_sensor_;  ///< Front distance sensor.
+  std::unique_ptr<PerceptionModule>
+      perception_module_;       ///< Camera sensor module.
+  std::string control_action_;  ///< Computed control action.
   bool is_running_;  ///< Flag to test if the perception module is running or
-                     ///not.
+                     /// not.
 };
 #endif  // INCLUDE_CONTROL_MODULE_HPP_

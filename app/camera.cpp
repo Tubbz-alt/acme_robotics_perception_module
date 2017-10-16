@@ -4,24 +4,32 @@
  * @copyright MIT license
  *
  * @brief DESCRIPTION
- * Function implementation for the class "Camera".
+ * Class implementation for the class Camera. Uncomment the DEBUG_CAMERA if you
+ * want to debug the code.
  *
  */
 
 #include "camera.hpp"
 
-Camera::Camera() { is_running_ = true; }
+Camera::Camera() {
+  is_running_ = true;  // Set the flag to true
+}
 
-Camera::~Camera() {
-  // TODO: Implement destructor
+Camera::~Camera() {}
+
+auto Camera::testCamera() -> bool {
+}
+
+auto Camera::setDefaultVideo() -> bool {
 }
 
 auto Camera::process() -> void {
-  // TODO: Implement process method
 }
 
-auto Camera::isAlive() -> bool { return is_running_; }
+auto Camera::isAlive() -> bool {
+  return is_running_;  // Return the alive flag
+}
 
-auto Camera::getVideoCapture() -> cv::VideoCapture { return vid_cap_; }
-
-auto Camera::getOutput() -> cv::Mat { return output_processed_image_; }
+auto Camera::getOutput() -> cv::Mat {
+  return output_processed_image_;  // Return the processed image
+}

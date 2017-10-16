@@ -14,19 +14,20 @@
 #ifndef INCLUDE_CAMERA_HPP_
 #define INCLUDE_CAMERA_HPP_
 
-#include "sensor.hpp"
-
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/videoio.hpp>
 
+#include <iostream>
+
+#include "sensor.hpp"
+
 /**
  * @brief      Class for camera sensor. This class is derived from the base
  * Class Sensor.
  */
-// template <class T>
-class Camera : public Sensor <cv::Mat>{
+class Camera : public Sensor<cv::Mat> {
  public:
   /**
    * @brief      Constructor of the class Camera. Set is_running_ flag to true.
@@ -40,6 +41,21 @@ class Camera : public Sensor <cv::Mat>{
    * @return     void: Return nothing.
    */
   ~Camera();
+  /**
+   * @brief      Function to test the working of camera. If the camera is not
+   * working it will set the vid_cap_ object to read default video
+   *
+   * @return     bool: Return true if camera is working, false otherwise.
+   */
+  auto testCamera() -> bool;
+
+  /**
+   * @brief      Sets the default VideoCapture object. Call this function if
+   * camera is not working.
+   *
+   * @return     bool: Return true after setting the default video.
+   */
+  auto setDefaultVideo() -> bool;
   /**
    * @brief      Override the virtual method "process" of Sensor class. This
    * class processes the image so that Perception module can use it to determine
@@ -56,12 +72,7 @@ class Camera : public Sensor <cv::Mat>{
    * otherwise.
    */
   auto isAlive() -> bool;
-  /**
-   * @brief      Gets the video capture object private to the class.
-   *
-   * @return     cv::VideoCapture: Return the video capture object(vid_cap_).
-   */
-  auto getVideoCapture() -> cv::VideoCapture;
+
   /**
    * @brief      Override the method "getOutput" of Sensor class. This method
    * returns the pre-processed image suitable for further processing.
