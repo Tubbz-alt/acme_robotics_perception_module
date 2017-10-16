@@ -27,6 +27,17 @@ auto UltrasonicSensor::setSeed(const int &seed) -> void {
 }
 
 auto UltrasonicSensor::process() -> void {
+  float randReading = static_cast<float>(rand_r(&seed_)) /
+                      RAND_MAX;  // Generate a pseudo random number
+
+  if (randReading > 0.00001 &&
+      randReading < 0.99) {  // Check if it is a valid reading
+    output_current_distance_ = 5 + randReading;  // Set the current reading
+  } else {
+    output_current_distance_ =
+        max_distance_ +
+        10.0;  // If reading is greater than max distance  set it to invalid
+  }
 }
 
 auto UltrasonicSensor::isAlive() -> bool {
