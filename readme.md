@@ -55,11 +55,24 @@ The *control* module first checks the reading from the ultrasonic sensor to dete
 
 ## Output
 
+The following table shows the output for the vertically detected line in the image.
+
 | Input Image   | Pre-processed output |
 | ------------- | ------------- |
 | ![](https://github.com/nr-parikh/acme_robotics_perception_module/blob/master/data/caution_tape_vertical.jpg)  | ![](https://github.com/nr-parikh/acme_robotics_perception_module/blob/master/data/expectedImg.jpg)  |
 
 
-| Detected Line   | Generate output action |
+| Detected Line   | Generated output action |
 | ------------- | ------------- |
-| ![](https://github.com/nr-parikh/acme_robotics_perception_module/blob/master/data/outputImg.jpg)  | ![](https://github.com/nr-parikh/acme_robotics_perception_module/blob/master/data/expectedImg.jpg)  |
+| ![](https://github.com/nr-parikh/acme_robotics_perception_module/blob/master/data/outputImg.jpg)  | ![](https://github.com/nr-parikh/acme_robotics_perception_module/blob/master/data/output_1.png)  |
+
+The table below shows the output for the horizontally detected line in the image.
+
+| Input Image   | Pre-processed output |
+| ------------- | ------------- |
+| ![](https://github.com/nr-parikh/acme_robotics_perception_module/blob/master/data/caution_tape.jpg)  | ![](https://github.com/nr-parikh/acme_robotics_perception_module/blob/master/data/expectedImg.jpg)  |
+
+
+| Detected Line   | Generated output action |
+| ------------- | ------------- |
+| ![](https://github.com/nr-parikh/acme_robotics_perception_module/blob/master/data/pre-process_2.jpg)  | ![](https://github.com/nr-parikh/acme_robotics_perception_module/blob/master/data/output_2.png)  |
