@@ -72,7 +72,7 @@ auto PerceptionModule::detectContours(const cv::Mat &raw_image) -> void {
     contour_detected_ = false;  // Set contour detected flag to false
   }
 
-#ifdef DEBUG_PERCEPTION_MODULE
+#ifdef PERCEPTION_MODULE_DEBUG
 
   std::cout << "Contour ID: " << largest_contour_id_
             << std::endl;  // Display the largest contour ID
@@ -80,9 +80,9 @@ auto PerceptionModule::detectContours(const cv::Mat &raw_image) -> void {
             << std::endl;  // Display the largest contour area
   cv::drawContours(contour_image_, contours_, largest_contour_id_,
                    (255, 255, 255), 2, 5, heirarchy_, 0,
-                   cv::Point());              // Draw the largest contour
-  cv::imshow("Debug Image", contour_image_);  // Show the image for debugging
-  cv::waitKey(3000);                          // Wait for 3 seconds
+                   cv::Point());  // Draw the largest contour
+// cv::imshow("Debug Image", contour_image_);  // Show the image for debugging
+// cv::waitKey(3000);                          // Wait for 3 seconds
 
 #endif  // PERCEPTION_MODULE_DEBUG
 }
@@ -117,7 +117,7 @@ auto PerceptionModule::computeLinePts() -> void {
   points_.push_back(std::make_pair(
       l[2], l[3]));  // Create a vector of the points on the detected line
 
-#ifdef DEBUG_PERCEPTION_MODULE
+#ifdef PERCEPTION_MODULE_DEBUG
 
   std::cout << "Length of lines_: " << lines_.size()
             << std::endl;  // Display the number of lines detected
@@ -128,8 +128,9 @@ auto PerceptionModule::computeLinePts() -> void {
   cv::line(linesImg, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]),
            cv::Scalar(0, 0, 255), 3, cv::LINE_AA);  // Draw the detected line
 
-  cv::imshow("Detected Line", linesImg);  // Show the image
-  cv::waitKey(3000);                      // Wait for 3 seconds before closing the window
+// cv::imshow("Detected Line", linesImg);  // Show the image
+// cv::waitKey(3000);                      // Wait for 3 seconds before closing
+// the window
 
 #endif  // PERCEPTION_MODULE_DEBUG
 }

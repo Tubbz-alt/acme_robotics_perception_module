@@ -4,7 +4,8 @@
  * @copyright MIT license
  *
  * @brief DESCRIPTION
- * Dummy main file.
+ * The file to run the perception module. The flags are defined such that it
+ * will read the image in the "data" folder.
  *
  */
 
@@ -12,33 +13,25 @@
 #include "control_module.hpp"
 
 int main() {
-  // UltrasonicSensor sensor1;
-  // sensor1.setMaxDistance(10.03);
-  // std::cout << "Max distance:" << sensor1.getMaxDistance() << std::endl;
-  // sensor1.process();
-  // std::cout << "Current distance:" << sensor1.getOutput() << std::endl;
-  // std::cout << "Is running?" << sensor1.isAlive() << std::endl;
-  std::cout << " done" << std::endl;
-  Camera cam;
-  // cam.setDebugFlag(true);
-  // std::cout<<"Camera running? "<< cam.testCamera()<<std::endl;
-  cam.process();
-  cv::Mat thresholdImg = cam.getOutput();
+  std::cout << "[INFO] Starting the controller..."
+            << std::endl;  // Starting the module
 
-  // std::cout<< "cam initialization done"<<std::endl;
-  PerceptionModule pm;
-  // std::cout<< "PM initialization done"<<std::endl;
-  // pm.detectContours(thresholdImg);
-  // std::cout<< "PM contours done"<<std::endl;
-  // pm.computeLinePts(thresholdImg);
-  // std::cout<< "PM center done"<<std::endl;
-  // std::pair<int, int> center = pm.getCenter();
-  // std::cout << "The center of the lasrgest contour is: " << center.first <<
-  // ", "
-  //           << center.second << std::endl;
+  PerceptionModule pm;  // Instantiate the PerceptionModule
+  if (pm.isAlive()) {
+    pm.computeLinePts();  // Compute the points on the detected line
+  } else {
+    std::cout << "[ERROR] Perception module is not running." << std::endl;
+  }
 
-  ControlModule cm;
-  cm.computeActionPt(pm.getPoints());
-  std::cout << cm.getControlAction() << std::endl;
+  ControlModule cm;  // Instantiate the ControlModule
+  if (cm.runDiagnostics()) {
+    cm.computeActionPt(pm.getPoints());  // Compute the action
+    std::cout << "[INFO] The computed control action is:" << std::endl
+              << cm.getControlAction()
+              << std::endl;  // Display the computed action
+  } else {
+    std::cout << "[ERROR] Please ensure all modules are running." << std::endl;
+  }
+
   return 0;
 }

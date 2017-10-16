@@ -77,10 +77,10 @@ auto Camera::process() -> void {
                                                       // using ellipse as a
                                                       // structuring element
 
-  cv::imshow("Debug image",
-             output_processed_image_);  // Display the debug image
+  // cv::imshow("Debug image",
+  //            output_processed_image_);  // Display the debug image
 
-  cv::waitKey(3000);  // Wiat for 3 seconds before closing the window
+  // cv::waitKey(3000);  // Wiat for 3 seconds before closing the window
 // cv::imwrite("../data/expectedImg.jpg", output_processed_image_);
 #else
 
