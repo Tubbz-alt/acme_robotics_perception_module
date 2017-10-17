@@ -13,7 +13,7 @@
 
 #define DEBUG_CAMERA
 
-Camera::Camera() {
+Camera::Camera() : Sensor() {
   is_running_ = true;  // Set the flag to true
   vid_cap_ =
       cv::VideoCapture(0);  // Change the value to 1 if using secondary camera
@@ -50,15 +50,13 @@ auto Camera::setDefaultVideo() -> bool {
   return true;
 }
 
-auto Camera::process() -> void {
-  cv::Mat inputImg, thresholdImg1, thresholdImg2,
-      combinedImg;  // Create local variables
-
 #ifdef DEBUG_CAMERA
 
+auto Camera::process(const cv::Mat &img) -> void {
   std::cout << "[DEBUG] Debugging camera sensor." << std::endl;
-  inputImg =
-      cv::imread("../data/caution_tape_vertical.jpg");  // Read debug image
+  cv::Mat inputImg, thresholdImg1, thresholdImg2,
+      combinedImg;  // Create local variables
+  inputImg = img;
   cv::inRange(inputImg, cv::Scalar(22, 22, 0), cv::Scalar(38, 255, 255),
               thresholdImg1);  // Thresholding the image for Yellow
   cv::inRange(inputImg, cv::Scalar(0, 0, 0), cv::Scalar(179, 255, 30),
@@ -81,32 +79,19 @@ auto Camera::process() -> void {
   //            output_processed_image_);  // Display the debug image
 
   // cv::waitKey(3000);  // Wiat for 3 seconds before closing the window
-// cv::imwrite("../data/expectedImg.jpg", output_processed_image_);
+  // cv::imwrite("../data/expectedImg.jpg", output_processed_image_);
+}
+
 #else
 
+auto Camera::process() -> void {
+  cv::Mat inputImg, thresholdImg1, thresholdImg2,
+      combinedImg;       // Create local variables
   vid_cap_ >> inputImg;  // Read the frame
 
-  cv::inRange(inputImg, cv::Scalar(22, 22, 0), cv::Scalar(38, 255, 255),
-              thresholdImg1);  // Thresholding the image for Yellow
-  cv::inRange(inputImg, cv::Scalar(0, 0, 0), cv::Scalar(179, 255, 30),
-              thresholdImg2);  // Thresholing the image for Black
-
-  cv::addWeighted(
-      thresholdImg1, 0.5, thresholdImg2, 0.5, 0.0,
-      output_processed_image_);  // Weighted sum of the thresholded images
-
-  cv::dilate(combinedImg, combinedImg,
-             cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(7, 7),
-                                       cv::Point()));  // Morphological dilation
-                                                       // using ellipse as a
-                                                       // structuring element
-  cv::erode(combinedImg, output_processed_image_,
-            cv::getStructuringElement(cv::MORPH_ELLIPSE, cv::Size(5, 5),
-                                      cv::Point()));  // Morphological erosion
-                                                      // using ellipse as a
-                                                      // structuring element
-#endif
+  process(inputImg);
 }
+#endif  // DEBUG_CAMERA
 
 auto Camera::isAlive() -> bool {
   return is_running_;  // Return the alive flag

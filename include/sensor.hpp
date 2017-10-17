@@ -27,11 +27,6 @@ class Sensor {
    */
   virtual auto getOutput() -> T = 0;
   /**
-   * @brief Function to do the process of respective class
-   * @return void: Return nothing
-   */
-  virtual auto process() -> void = 0;
-  /**
    * @brief Function to check whether the sensor is running
    * @return bool: Return "true" if running, "false" otherwise
    */

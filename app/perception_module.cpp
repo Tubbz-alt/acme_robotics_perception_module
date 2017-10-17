@@ -81,7 +81,8 @@ auto PerceptionModule::detectContours(const cv::Mat &raw_image) -> void {
   cv::drawContours(contour_image_, contours_, largest_contour_id_,
                    (255, 255, 255), 2, 5, heirarchy_, 0,
                    cv::Point());  // Draw the largest contour
-// cv::imshow("Debug Image", contour_image_);  // Show the image for debugging
+// cv::imshow("Debug Image", contour_image_);  // Show the image for
+// debugging
 // cv::waitKey(3000);                          // Wait for 3 seconds
 
 #endif  // PERCEPTION_MODULE_DEBUG
@@ -101,7 +102,40 @@ auto PerceptionModule::getCenter() -> std::pair<int, int> {
   return center_;  // Return the center
 }
 
-#else
+#else  // PERCEPTION_MODULE_USE_LINE_PTS
+
+#ifdef PERCEPTION_MODULE_DEBUG
+
+auto PerceptionModule::computeLinePts(const cv::Mat &img) -> void {
+  camera_obj_->process(img);
+  raw_image_ = camera_obj_->getOutput();
+  cv::Mat linesImg =
+      cv::Mat::zeros(raw_image_.size(), CV_8UC3);  // Initialize a local image
+  cv::HoughLinesP(
+      raw_image_, lines_, 1, CV_PI / 180,
+      200);  // Use Hough transform to find the lines in the input image
+  cv::Vec4i l = lines_[0];  // Get tje highest voted line
+  points_.push_back(std::make_pair(
+      l[0], l[1]));  // Create a vector of the points on the detected line
+  points_.push_back(std::make_pair(
+      l[2], l[3]));  // Create a vector of the points on the detected line
+
+  std::cout << "Length of lines_: " << lines_.size()
+            << std::endl;  // Display the number of lines detected
+  std::cout << "Point 1: " << l[0] << "," << l[1]
+            << std::endl;  // Display the first point on the line
+  std::cout << "Point 2: " << l[2] << "," << l[3]
+            << std::endl;  // Display the second point on the line
+  cv::line(linesImg, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]),
+           cv::Scalar(0, 0, 255), 3, cv::LINE_AA);  // Draw the detected line
+
+  // cv::imshow("Detected Line", linesImg);  // Show the image
+  // cv::waitKey(0);                         // Wait for 3 seconds before
+  // closing
+  // the window
+}
+
+#else   // PERCEPTION_MODULE_DEBUG
 
 auto PerceptionModule::computeLinePts() -> void {
   camera_obj_->process();
@@ -117,8 +151,6 @@ auto PerceptionModule::computeLinePts() -> void {
   points_.push_back(std::make_pair(
       l[2], l[3]));  // Create a vector of the points on the detected line
 
-#ifdef PERCEPTION_MODULE_DEBUG
-
   std::cout << "Length of lines_: " << lines_.size()
             << std::endl;  // Display the number of lines detected
   std::cout << "Point 1: " << l[0] << "," << l[1]
@@ -128,21 +160,14 @@ auto PerceptionModule::computeLinePts() -> void {
   cv::line(linesImg, cv::Point(l[0], l[1]), cv::Point(l[2], l[3]),
            cv::Scalar(0, 0, 255), 3, cv::LINE_AA);  // Draw the detected line
 
-// cv::imshow("Detected Line", linesImg);  // Show the image
-// cv::waitKey(3000);                      // Wait for 3 seconds before closing
-// the window
-
-#endif  // PERCEPTION_MODULE_DEBUG
+  // cv::imshow("Detected Line", linesImg);  // Show the image
+  // cv::waitKey(3000);                      // Wait for 3 seconds before
+  // closing
+  // the window
 }
+#endif  // PERCEPTION_MODULE_DEBUG
 
 #endif  // PERCEPTION_MODULE_USE_LINE_PTS
-
-auto PerceptionModule::getCameraImage() -> cv::Mat {
-  cv::Mat retImg =
-      camera_obj_
-          ->getOutput();  // Get the processed output image from camera object
-  return retImg;          // Return the image
-}
 
 auto PerceptionModule::getPoints() -> std::vector<std::pair<int, int>> {
   auto copyPoints = points_;  // Copy the points in the local variable

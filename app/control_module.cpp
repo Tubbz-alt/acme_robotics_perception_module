@@ -102,10 +102,8 @@ auto ControlModule::computeActionPt(
         -(pt2.second - pt1.second) / denom;   // Calculate the slope of the line
     float theta = atan(slope) * 180 / CV_PI;  // Calculate the angle
 
-    int rows = (perception_module_->getCameraImage())
-                   .rows;  // Get the number of rows in the input image
-    int cols = (perception_module_->getCameraImage())
-                   .cols;  // Get the number of columns in the input image
+    int rows = 638;  // Number of rows in the image
+    int cols = 958;  // Number of cols in the image
 
     if (abs(pt1.second - pt2.second) < 10) {  // Check if the line is horizontal
       if (pt1.second < (rows / 2) &&

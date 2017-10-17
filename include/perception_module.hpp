@@ -70,18 +70,21 @@ class PerceptionModule {
    */
   auto detectCenter() -> void;
   /**
-   * @brief      Gets the output image from camera.
-   *
-   * @return     cv::Mat: Return the output image from camera.
-   */
-  auto getCameraImage() -> cv::Mat;
-  /**
    * @brief      Finds the best fitting line using the Hough transforms and
    * returns the points on the line
    *
    * @return     void: Return nothing
    */
   auto computeLinePts() -> void;
+  /**
+   * @brief      Overload the function to read the specifc file. Find the best
+   * fitting line using the Hough transforms and returns the points on the line
+   *
+   * @param[in]  file: The image to be read by the module.
+   *
+   * @return     void: Return nothing.
+   */
+  auto computeLinePts(const cv::Mat &img) -> void;
   /**
    * @brief      Function to return the points on the detected line.
    *
@@ -118,5 +121,6 @@ class PerceptionModule {
                      /// not.
   std::vector<cv::Vec4i> lines_;
   std::vector<std::pair<int, int>> points_;  ///< Vector of points of line.
+  cv::Mat raw_image_;
 };
 #endif  //  INCLUDE_PERCEPTION_MODULE_HPP_
