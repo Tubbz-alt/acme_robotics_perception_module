@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['is_5frunning_5f',['is_running_',['../class_camera.html#a24d141601f7d0330b77b86505851bd0d',1,'Camera::is_running_()'],['../class_control_module.html#af48419a814c008e4695bef60daf2a516',1,'ControlModule::is_running_()'],['../class_perception_module.html#a95211a0bd4fe047b0e22e4afb7c50e26',1,'PerceptionModule::is_running_()'],['../class_ultrasonic_sensor.html#a7d98b5005d41e9bb8fd84c71dde4079a',1,'UltrasonicSensor::is_running_()']]]
+  ['database',['database',['../_8ycm__extra__conf_8py.html#a64dbaa3229ec575b68ec333442e10cee',1,'.ycm_extra_conf.py']]],
+  ['dir_5f47865d3370f95106d07c46b29d9f7bad',['dir_47865d3370f95106d07c46b29d9f7bad',['../dir__47865d3370f95106d07c46b29d9f7bad_8js.html#a527f2bef77f43b71c0d43bee3c49a25a',1,'dir_47865d3370f95106d07c46b29d9f7bad.js']]],
+  ['dir_5f935964e4437418e219b9c4dd91ceb477',['dir_935964e4437418e219b9c4dd91ceb477',['../dir__935964e4437418e219b9c4dd91ceb477_8js.html#a04d1f3b205c7ae8d65f04ae337c274e4',1,'dir_935964e4437418e219b9c4dd91ceb477.js']]],
+  ['dir_5fa36aa6cfd33420a32b2d4eff2bb33efe',['dir_a36aa6cfd33420a32b2d4eff2bb33efe',['../dir__a36aa6cfd33420a32b2d4eff2bb33efe_8js.html#a38ff2edcb78c5c03cee44f122bb66664',1,'dir_a36aa6cfd33420a32b2d4eff2bb33efe.js']]],
+  ['dir_5feb57bcd08f8ea4fcd276ebfabd64f5d1',['dir_eb57bcd08f8ea4fcd276ebfabd64f5d1',['../dir__eb57bcd08f8ea4fcd276ebfabd64f5d1_8js.html#addb8587a87ccecad2faa3f05fb9ec9cd',1,'dir_eb57bcd08f8ea4fcd276ebfabd64f5d1.js']]]
 ];

@@ -14,7 +14,5 @@ var hierarchy =
       [ "TestControlModule", "class_test_control_module.html", null ],
       [ "TestPerceptionModule", "class_test_perception_module.html", null ],
       [ "TestUltrasonicSensor", "class_test_ultrasonic_sensor.html", null ]
-    ] ],
-    [ "os", null, null ],
-    [ "ycm_core", null, null ]
+    ] ]
 ];

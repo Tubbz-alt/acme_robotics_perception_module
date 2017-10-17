@@ -24,10 +24,10 @@ auto \hyperlink{class_perception_module_a851a7c7b5e9e11459dd171bb31128402}{detec
 \begin{DoxyCompactList}\small\item\em Function to detect the contours in the incoming frame. \end{DoxyCompactList}\item 
 auto \hyperlink{class_perception_module_ad3c7a85f300e3a545da8a619af99d4de}{detect\+Center} () -\/$>$ void
 \begin{DoxyCompactList}\small\item\em Method to get the center of the detected contours. \end{DoxyCompactList}\item 
-auto \hyperlink{class_perception_module_a11b2a35583209674467527ddafca2d6e}{get\+Camera\+Image} () -\/$>$ cv\+::\+Mat
-\begin{DoxyCompactList}\small\item\em Gets the output image from camera. \end{DoxyCompactList}\item 
 auto \hyperlink{class_perception_module_a85bf112d0310cbc6a3160e3ea24f201e}{compute\+Line\+Pts} () -\/$>$ void
 \begin{DoxyCompactList}\small\item\em Finds the best fitting line using the Hough transforms and returns the points on the line. \end{DoxyCompactList}\item 
+auto \hyperlink{class_perception_module_a10108f98beff5d686826d52d787c7a63}{compute\+Line\+Pts} (const cv\+::\+Mat \&img) -\/$>$ void
+\begin{DoxyCompactList}\small\item\em Overload the function to read the specifc file. Find the best fitting line using the Hough transforms and returns the points on the line. \end{DoxyCompactList}\item 
 auto \hyperlink{class_perception_module_a4479a449ea05c5490a47224767a864cc}{get\+Points} () -\/$>$ std\+::vector$<$ std\+::pair$<$ int, int $>$$>$
 \begin{DoxyCompactList}\small\item\em Function to return the points on the detected line. \end{DoxyCompactList}\item 
 auto \hyperlink{class_perception_module_ab39e9908fda8dd1b582b33a2f1ee0638}{get\+Center} () -\/$>$ std\+::pair$<$ int, int $>$
@@ -60,7 +60,9 @@ bool \hyperlink{class_perception_module_a95211a0bd4fe047b0e22e4afb7c50e26}{is\+\
 std\+::vector$<$ cv\+::\+Vec4i $>$ \hyperlink{class_perception_module_af7aab087aaf76ccf57ef68a8001dc530}{lines\+\_\+}
 \item 
 std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \hyperlink{class_perception_module_a9cfd32e708d852e96b117e44643bbfad}{points\+\_\+}
-\begin{DoxyCompactList}\small\item\em Vector of points of line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Vector of points of line. \end{DoxyCompactList}\item 
+cv\+::\+Mat \hyperlink{class_perception_module_a66e4d7a55a1ee7eaf0b91cde0c4c5e99}{raw\+\_\+image\+\_\+}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -126,7 +128,7 @@ bool\+: Return the value returned by \hyperlink{class_camera_a1b3b1ece3344ea8475
 \end{DoxyReturn}
 
 
-Definition at line 153 of file perception\+\_\+module.\+cpp.
+Definition at line 178 of file perception\+\_\+module.\+cpp.
 
 \index{Perception\+Module@{Perception\+Module}!compute\+Line\+Pts@{compute\+Line\+Pts}}
 \index{compute\+Line\+Pts@{compute\+Line\+Pts}!Perception\+Module@{Perception\+Module}}
@@ -134,7 +136,7 @@ Definition at line 153 of file perception\+\_\+module.\+cpp.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) -\/$>$ void}\hypertarget{class_perception_module_a85bf112d0310cbc6a3160e3ea24f201e}{}\label{class_perception_module_a85bf112d0310cbc6a3160e3ea24f201e}
+) -\/$>$  void}\hypertarget{class_perception_module_a85bf112d0310cbc6a3160e3ea24f201e}{}\label{class_perception_module_a85bf112d0310cbc6a3160e3ea24f201e}
 
 
 Finds the best fitting line using the Hough transforms and returns the points on the line. 
@@ -142,9 +144,28 @@ Finds the best fitting line using the Hough transforms and returns the points on
 \begin{DoxyReturn}{Returns}
 void\+: Return nothing 
 \end{DoxyReturn}
+\index{Perception\+Module@{Perception\+Module}!compute\+Line\+Pts@{compute\+Line\+Pts}}
+\index{compute\+Line\+Pts@{compute\+Line\+Pts}!Perception\+Module@{Perception\+Module}}
+\subsubsection[{\texorpdfstring{compute\+Line\+Pts(const cv\+::\+Mat \&img) -\/$>$ void}{computeLinePts(const cv::Mat &img) -> void}}]{\setlength{\rightskip}{0pt plus 5cm}auto Perception\+Module\+::compute\+Line\+Pts (
+\begin{DoxyParamCaption}
+\item[{const cv\+::\+Mat \&}]{img}
+\end{DoxyParamCaption}
+) -\/$>$ void}\hypertarget{class_perception_module_a10108f98beff5d686826d52d787c7a63}{}\label{class_perception_module_a10108f98beff5d686826d52d787c7a63}
 
 
-Definition at line 106 of file perception\+\_\+module.\+cpp.
+Overload the function to read the specifc file. Find the best fitting line using the Hough transforms and returns the points on the line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file} & The image to be read by the module.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing. 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file perception\+\_\+module.\+cpp.
 
 \index{Perception\+Module@{Perception\+Module}!detect\+Center@{detect\+Center}}
 \index{detect\+Center@{detect\+Center}!Perception\+Module@{Perception\+Module}}
@@ -184,24 +205,6 @@ Function to detect the contours in the incoming frame.
 \begin{DoxyReturn}{Returns}
 void\+: Return nothing. 
 \end{DoxyReturn}
-\index{Perception\+Module@{Perception\+Module}!get\+Camera\+Image@{get\+Camera\+Image}}
-\index{get\+Camera\+Image@{get\+Camera\+Image}!Perception\+Module@{Perception\+Module}}
-\subsubsection[{\texorpdfstring{get\+Camera\+Image() -\/$>$ cv\+::\+Mat}{getCameraImage() -> cv::Mat}}]{\setlength{\rightskip}{0pt plus 5cm}auto Perception\+Module\+::get\+Camera\+Image (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) -\/$>$ cv\+::\+Mat}\hypertarget{class_perception_module_a11b2a35583209674467527ddafca2d6e}{}\label{class_perception_module_a11b2a35583209674467527ddafca2d6e}
-
-
-Gets the output image from camera. 
-
-\begin{DoxyReturn}{Returns}
-cv\+::\+Mat\+: Return the output image from camera. 
-\end{DoxyReturn}
-
-
-Definition at line 140 of file perception\+\_\+module.\+cpp.
-
 \index{Perception\+Module@{Perception\+Module}!get\+Center@{get\+Center}}
 \index{get\+Center@{get\+Center}!Perception\+Module@{Perception\+Module}}
 \subsubsection[{\texorpdfstring{get\+Center() -\/$>$ std\+::pair$<$ int, int $>$}{getCenter() -> std::pair< int, int >}}]{\setlength{\rightskip}{0pt plus 5cm}auto Perception\+Module\+::get\+Center (
@@ -232,7 +235,7 @@ std\+::vector$<$std\+::pair$<$int, int$>$$>$\+: Return vector of pair of the poi
 \end{DoxyReturn}
 
 
-Definition at line 147 of file perception\+\_\+module.\+cpp.
+Definition at line 172 of file perception\+\_\+module.\+cpp.
 
 \index{Perception\+Module@{Perception\+Module}!is\+Alive@{is\+Alive}}
 \index{is\+Alive@{is\+Alive}!Perception\+Module@{Perception\+Module}}
@@ -282,21 +285,21 @@ Object of the \hyperlink{class_camera}{Camera} sensor.
 
 
 
-Definition at line 106 of file perception\+\_\+module.\+hpp.
+Definition at line 109 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!center\+\_\+@{center\+\_\+}}
 \index{center\+\_\+@{center\+\_\+}!Perception\+Module@{Perception\+Module}}
 \subsubsection[{\texorpdfstring{center\+\_\+}{center_}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$int, int$>$ Perception\+Module\+::center\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_perception_module_a67ea0e9f666e33bce8d81bf22098d168}{}\label{class_perception_module_a67ea0e9f666e33bce8d81bf22098d168}
 
 
-Definition at line 109 of file perception\+\_\+module.\+hpp.
+Definition at line 112 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!contour\+\_\+detected\+\_\+@{contour\+\_\+detected\+\_\+}}
 \index{contour\+\_\+detected\+\_\+@{contour\+\_\+detected\+\_\+}!Perception\+Module@{Perception\+Module}}
 \subsubsection[{\texorpdfstring{contour\+\_\+detected\+\_\+}{contour_detected_}}]{\setlength{\rightskip}{0pt plus 5cm}bool Perception\+Module\+::contour\+\_\+detected\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_perception_module_ab547d968284f6ab18a01b9776c54f38a}{}\label{class_perception_module_ab547d968284f6ab18a01b9776c54f38a}
 Flag to indicated whether the contour is detected or not. 
 
-Definition at line 111 of file perception\+\_\+module.\+hpp.
+Definition at line 114 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!contour\+\_\+image\+\_\+@{contour\+\_\+image\+\_\+}}
 \index{contour\+\_\+image\+\_\+@{contour\+\_\+image\+\_\+}!Perception\+Module@{Perception\+Module}}
@@ -307,7 +310,7 @@ Image containing detected contours.
 
 
 
-Definition at line 110 of file perception\+\_\+module.\+hpp.
+Definition at line 113 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!contours\+\_\+@{contours\+\_\+}}
 \index{contours\+\_\+@{contours\+\_\+}!Perception\+Module@{Perception\+Module}}
@@ -318,7 +321,7 @@ Vectors of contours.
 
 
 
-Definition at line 107 of file perception\+\_\+module.\+hpp.
+Definition at line 110 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!heirarchy\+\_\+@{heirarchy\+\_\+}}
 \index{heirarchy\+\_\+@{heirarchy\+\_\+}!Perception\+Module@{Perception\+Module}}
@@ -329,14 +332,14 @@ Heirarchy of contours.
 
 
 
-Definition at line 108 of file perception\+\_\+module.\+hpp.
+Definition at line 111 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!is\+\_\+running\+\_\+@{is\+\_\+running\+\_\+}}
 \index{is\+\_\+running\+\_\+@{is\+\_\+running\+\_\+}!Perception\+Module@{Perception\+Module}}
 \subsubsection[{\texorpdfstring{is\+\_\+running\+\_\+}{is_running_}}]{\setlength{\rightskip}{0pt plus 5cm}bool Perception\+Module\+::is\+\_\+running\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_perception_module_a95211a0bd4fe047b0e22e4afb7c50e26}{}\label{class_perception_module_a95211a0bd4fe047b0e22e4afb7c50e26}
 Flag to test if the perception module is running or not. 
 
-Definition at line 117 of file perception\+\_\+module.\+hpp.
+Definition at line 120 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!largest\+\_\+contour\+\_\+@{largest\+\_\+contour\+\_\+}}
 \index{largest\+\_\+contour\+\_\+@{largest\+\_\+contour\+\_\+}!Perception\+Module@{Perception\+Module}}
@@ -347,7 +350,7 @@ Largest contour detected in the image.
 
 
 
-Definition at line 116 of file perception\+\_\+module.\+hpp.
+Definition at line 119 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!largest\+\_\+contour\+\_\+area\+\_\+@{largest\+\_\+contour\+\_\+area\+\_\+}}
 \index{largest\+\_\+contour\+\_\+area\+\_\+@{largest\+\_\+contour\+\_\+area\+\_\+}!Perception\+Module@{Perception\+Module}}
@@ -358,7 +361,7 @@ Area of the largest contour detected.
 
 
 
-Definition at line 114 of file perception\+\_\+module.\+hpp.
+Definition at line 117 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!largest\+\_\+contour\+\_\+id\+\_\+@{largest\+\_\+contour\+\_\+id\+\_\+}}
 \index{largest\+\_\+contour\+\_\+id\+\_\+@{largest\+\_\+contour\+\_\+id\+\_\+}!Perception\+Module@{Perception\+Module}}
@@ -369,14 +372,14 @@ ID of the largest contour detected.
 
 
 
-Definition at line 113 of file perception\+\_\+module.\+hpp.
+Definition at line 116 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!lines\+\_\+@{lines\+\_\+}}
 \index{lines\+\_\+@{lines\+\_\+}!Perception\+Module@{Perception\+Module}}
 \subsubsection[{\texorpdfstring{lines\+\_\+}{lines_}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$cv\+::\+Vec4i$>$ Perception\+Module\+::lines\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_perception_module_af7aab087aaf76ccf57ef68a8001dc530}{}\label{class_perception_module_af7aab087aaf76ccf57ef68a8001dc530}
 
 
-Definition at line 119 of file perception\+\_\+module.\+hpp.
+Definition at line 122 of file perception\+\_\+module.\+hpp.
 
 \index{Perception\+Module@{Perception\+Module}!points\+\_\+@{points\+\_\+}}
 \index{points\+\_\+@{points\+\_\+}!Perception\+Module@{Perception\+Module}}
@@ -387,11 +390,18 @@ Vector of points of line.
 
 
 
-Definition at line 120 of file perception\+\_\+module.\+hpp.
+Definition at line 123 of file perception\+\_\+module.\+hpp.
+
+\index{Perception\+Module@{Perception\+Module}!raw\+\_\+image\+\_\+@{raw\+\_\+image\+\_\+}}
+\index{raw\+\_\+image\+\_\+@{raw\+\_\+image\+\_\+}!Perception\+Module@{Perception\+Module}}
+\subsubsection[{\texorpdfstring{raw\+\_\+image\+\_\+}{raw_image_}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Perception\+Module\+::raw\+\_\+image\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_perception_module_a66e4d7a55a1ee7eaf0b91cde0c4c5e99}{}\label{class_perception_module_a66e4d7a55a1ee7eaf0b91cde0c4c5e99}
+
+
+Definition at line 124 of file perception\+\_\+module.\+hpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/\hyperlink{perception__module_8hpp}{perception\+\_\+module.\+hpp}\item 
-/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/app/\hyperlink{perception__module_8cpp}{perception\+\_\+module.\+cpp}\end{DoxyCompactItemize}
+/home/nrparikh/\+Desktop/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/\hyperlink{perception__module_8hpp}{perception\+\_\+module.\+hpp}\item 
+/home/nrparikh/\+Desktop/acme\+\_\+robotics\+\_\+perception\+\_\+module/app/\hyperlink{perception__module_8cpp}{perception\+\_\+module.\+cpp}\end{DoxyCompactItemize}

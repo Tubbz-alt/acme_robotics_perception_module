@@ -4,9 +4,9 @@ var class_perception_module =
     [ "~PerceptionModule", "class_perception_module.html#a52bf1fd6688cd15a6687bc8af69bf116", null ],
     [ "cameraAlive", "class_perception_module.html#a034e0b3191be67f571aa284e0c30f749", null ],
     [ "computeLinePts", "class_perception_module.html#a85bf112d0310cbc6a3160e3ea24f201e", null ],
+    [ "computeLinePts", "class_perception_module.html#a10108f98beff5d686826d52d787c7a63", null ],
     [ "detectCenter", "class_perception_module.html#ad3c7a85f300e3a545da8a619af99d4de", null ],
     [ "detectContours", "class_perception_module.html#a851a7c7b5e9e11459dd171bb31128402", null ],
-    [ "getCameraImage", "class_perception_module.html#a11b2a35583209674467527ddafca2d6e", null ],
     [ "getCenter", "class_perception_module.html#ab39e9908fda8dd1b582b33a2f1ee0638", null ],
     [ "getPoints", "class_perception_module.html#a4479a449ea05c5490a47224767a864cc", null ],
     [ "isAlive", "class_perception_module.html#a934854719b0e95576883b7cb5098a7a5", null ],
@@ -22,5 +22,6 @@ var class_perception_module =
     [ "largest_contour_area_", "class_perception_module.html#aa20adfc7b4a473435fc98df6353b6fd6", null ],
     [ "largest_contour_id_", "class_perception_module.html#a7936595913566cc046bcecfe3e9803d9", null ],
     [ "lines_", "class_perception_module.html#af7aab087aaf76ccf57ef68a8001dc530", null ],
-    [ "points_", "class_perception_module.html#a9cfd32e708d852e96b117e44643bbfad", null ]
+    [ "points_", "class_perception_module.html#a9cfd32e708d852e96b117e44643bbfad", null ],
+    [ "raw_image_", "class_perception_module.html#a66e4d7a55a1ee7eaf0b91cde0c4c5e99", null ]
 ];

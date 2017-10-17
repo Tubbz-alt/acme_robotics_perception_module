@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ultrasonicsensor',['UltrasonicSensor',['../class_ultrasonic_sensor.html#afc21cb39ba75dfd008e1e82c82d2e61f',1,'UltrasonicSensor']]]
+  ['navto',['navTo',['../navtree_8js.html#a21beb601032fff375100a907f32129a5',1,'navtree.js']]],
+  ['newnode',['newNode',['../navtree_8js.html#aa2418b16159e9502e990f97ea6ec26c8',1,'navtree.js']]]
 ];

@@ -34,7 +34,7 @@
    <div id="projectname">Acme Robotics: Perception Module
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Midterm project ENPM808X</div>
+   <div id="projectbrief">Midterm project for ENPM808X at UMD</div>
   </td>
  </tr>
  </tbody>
@@ -141,12 +141,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad3c7a85f300e3a545da8a619af99d4de"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_perception_module.html#ad3c7a85f300e3a545da8a619af99d4de">detectCenter</a> () -&gt; void</td></tr>
 <tr class="memdesc:ad3c7a85f300e3a545da8a619af99d4de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to get the center of the detected contours.  <a href="#ad3c7a85f300e3a545da8a619af99d4de">More...</a><br /></td></tr>
 <tr class="separator:ad3c7a85f300e3a545da8a619af99d4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11b2a35583209674467527ddafca2d6e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_perception_module.html#a11b2a35583209674467527ddafca2d6e">getCameraImage</a> () -&gt; cv::Mat</td></tr>
-<tr class="memdesc:a11b2a35583209674467527ddafca2d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the output image from camera.  <a href="#a11b2a35583209674467527ddafca2d6e">More...</a><br /></td></tr>
-<tr class="separator:a11b2a35583209674467527ddafca2d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85bf112d0310cbc6a3160e3ea24f201e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_perception_module.html#a85bf112d0310cbc6a3160e3ea24f201e">computeLinePts</a> () -&gt; void</td></tr>
 <tr class="memdesc:a85bf112d0310cbc6a3160e3ea24f201e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the best fitting line using the Hough transforms and returns the points on the line.  <a href="#a85bf112d0310cbc6a3160e3ea24f201e">More...</a><br /></td></tr>
 <tr class="separator:a85bf112d0310cbc6a3160e3ea24f201e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10108f98beff5d686826d52d787c7a63"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_perception_module.html#a10108f98beff5d686826d52d787c7a63">computeLinePts</a> (const cv::Mat &amp;img) -&gt; void</td></tr>
+<tr class="memdesc:a10108f98beff5d686826d52d787c7a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload the function to read the specifc file. Find the best fitting line using the Hough transforms and returns the points on the line.  <a href="#a10108f98beff5d686826d52d787c7a63">More...</a><br /></td></tr>
+<tr class="separator:a10108f98beff5d686826d52d787c7a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4479a449ea05c5490a47224767a864cc"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_perception_module.html#a4479a449ea05c5490a47224767a864cc">getPoints</a> () -&gt; std::vector&lt; std::pair&lt; int, int &gt;&gt;</td></tr>
 <tr class="memdesc:a4479a449ea05c5490a47224767a864cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to return the points on the detected line.  <a href="#a4479a449ea05c5490a47224767a864cc">More...</a><br /></td></tr>
 <tr class="separator:a4479a449ea05c5490a47224767a864cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,6 +191,8 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a9cfd32e708d852e96b117e44643bbfad"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_perception_module.html#a9cfd32e708d852e96b117e44643bbfad">points_</a></td></tr>
 <tr class="memdesc:a9cfd32e708d852e96b117e44643bbfad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of points of line.  <a href="#a9cfd32e708d852e96b117e44643bbfad">More...</a><br /></td></tr>
 <tr class="separator:a9cfd32e708d852e96b117e44643bbfad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e4d7a55a1ee7eaf0b91cde0c4c5e99"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_perception_module.html#a66e4d7a55a1ee7eaf0b91cde0c4c5e99">raw_image_</a></td></tr>
+<tr class="separator:a66e4d7a55a1ee7eaf0b91cde0c4c5e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for perception module. This class finds the contours and the center of the contours in the image provided as an input. </p>
@@ -254,7 +256,7 @@ Private Attributes</h2></td></tr>
 <p>Function to check if camera is running or not. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool: Return the value returned by <a class="el" href="class_camera.html#a1b3b1ece3344ea84754aff31f048d55e" title="Override the virtual method &quot;isAlive&quot; of Sensor class. This method checks if the sensor is running or...">Camera::isAlive</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="perception__module_8cpp_source.html#l00153">153</a> of file <a class="el" href="perception__module_8cpp_source.html">perception_module.cpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8cpp_source.html#l00178">178</a> of file <a class="el" href="perception__module_8cpp_source.html">perception_module.cpp</a>.</p>
 
 </div>
 </div>
@@ -266,7 +268,7 @@ Private Attributes</h2></td></tr>
           <td class="memname">auto PerceptionModule::computeLinePts </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -274,7 +276,32 @@ Private Attributes</h2></td></tr>
 <p>Finds the best fitting line using the Hough transforms and returns the points on the line. </p>
 <dl class="section return"><dt>Returns</dt><dd>void: Return nothing </dd></dl>
 
-<p>Definition at line <a class="el" href="perception__module_8cpp_source.html#l00106">106</a> of file <a class="el" href="perception__module_8cpp_source.html">perception_module.cpp</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a10108f98beff5d686826d52d787c7a63"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto PerceptionModule::computeLinePts </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td> -&gt; void</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overload the function to read the specifc file. Find the best fitting line using the Hough transforms and returns the points on the line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The image to be read by the module.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void: Return nothing. </dd></dl>
+
+<p>Definition at line <a class="el" href="perception__module_8cpp_source.html#l00109">109</a> of file <a class="el" href="perception__module_8cpp_source.html">perception_module.cpp</a>.</p>
 
 </div>
 </div>
@@ -327,26 +354,6 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a11b2a35583209674467527ddafca2d6e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto PerceptionModule::getCameraImage </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> -&gt; cv::Mat</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the output image from camera. </p>
-<dl class="section return"><dt>Returns</dt><dd>cv::Mat: Return the output image from camera. </dd></dl>
-
-<p>Definition at line <a class="el" href="perception__module_8cpp_source.html#l00140">140</a> of file <a class="el" href="perception__module_8cpp_source.html">perception_module.cpp</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="ab39e9908fda8dd1b582b33a2f1ee0638"></a>
 <div class="memitem">
 <div class="memproto">
@@ -381,7 +388,7 @@ Private Attributes</h2></td></tr>
 <p>Function to return the points on the detected line. </p>
 <dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::pair&lt;int, int&gt;&gt;: Return vector of pair of the points on the detected line. </dd></dl>
 
-<p>Definition at line <a class="el" href="perception__module_8cpp_source.html#l00147">147</a> of file <a class="el" href="perception__module_8cpp_source.html">perception_module.cpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8cpp_source.html#l00172">172</a> of file <a class="el" href="perception__module_8cpp_source.html">perception_module.cpp</a>.</p>
 
 </div>
 </div>
@@ -446,7 +453,7 @@ Private Attributes</h2></td></tr>
 
 <p>Object of the <a class="el" href="class_camera.html" title="Class for camera sensor. This class is derived from the base Class Sensor. ">Camera</a> sensor. </p>
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00106">106</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00109">109</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -468,7 +475,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00109">109</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00112">112</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -491,7 +498,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Flag to indicated whether the contour is detected or not. </p>
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00111">111</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00114">114</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -515,7 +522,7 @@ Private Attributes</h2></td></tr>
 
 <p>Image containing detected contours. </p>
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00110">110</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00113">113</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -539,7 +546,7 @@ Private Attributes</h2></td></tr>
 
 <p>Vectors of contours. </p>
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00107">107</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00110">110</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -563,7 +570,7 @@ Private Attributes</h2></td></tr>
 
 <p>Heirarchy of contours. </p>
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00108">108</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00111">111</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -586,7 +593,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Flag to test if the perception module is running or not. </p>
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00117">117</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00120">120</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -610,7 +617,7 @@ Private Attributes</h2></td></tr>
 
 <p>Largest contour detected in the image. </p>
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00116">116</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00119">119</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -634,7 +641,7 @@ Private Attributes</h2></td></tr>
 
 <p>Area of the largest contour detected. </p>
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00114">114</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00117">117</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -658,7 +665,7 @@ Private Attributes</h2></td></tr>
 
 <p>ID of the largest contour detected. </p>
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00113">113</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00116">116</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -680,7 +687,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00119">119</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00122">122</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
@@ -704,13 +711,35 @@ Private Attributes</h2></td></tr>
 
 <p>Vector of points of line. </p>
 
-<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00120">120</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00123">123</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a66e4d7a55a1ee7eaf0b91cde0c4c5e99"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat PerceptionModule::raw_image_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="perception__module_8hpp_source.html#l00124">124</a> of file <a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/nrparikh/acme_robotics_perception_module/include/<a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a></li>
-<li>/home/nrparikh/acme_robotics_perception_module/app/<a class="el" href="perception__module_8cpp_source.html">perception_module.cpp</a></li>
+<li>/home/nrparikh/Desktop/acme_robotics_perception_module/include/<a class="el" href="perception__module_8hpp_source.html">perception_module.hpp</a></li>
+<li>/home/nrparikh/Desktop/acme_robotics_perception_module/app/<a class="el" href="perception__module_8cpp_source.html">perception_module.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

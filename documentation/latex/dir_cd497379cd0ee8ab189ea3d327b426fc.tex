@@ -1,0 +1,15 @@
+\hypertarget{dir_cd497379cd0ee8ab189ea3d327b426fc}{}\section{/home/nrparikh/\+Desktop/acme\+\_\+robotics\+\_\+perception\+\_\+module/include Directory Reference}
+\label{dir_cd497379cd0ee8ab189ea3d327b426fc}\index{/home/nrparikh/\+Desktop/acme\+\_\+robotics\+\_\+perception\+\_\+module/include Directory Reference@{/home/nrparikh/\+Desktop/acme\+\_\+robotics\+\_\+perception\+\_\+module/include Directory Reference}}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{camera_8hpp}{camera.\+hpp}
+\begin{DoxyCompactList}\small\item\em D\+E\+S\+C\+R\+I\+P\+T\+I\+ON Header file for the class \char`\"{}\+Camera\char`\"{}. This class is derived from the base class \char`\"{}\+Sensor\char`\"{}. The private members of the class include vid\+\_\+cap\+\_\+, is\+\_\+running\+\_\+, and output\+\_\+processed\+\_\+image\+\_\+. The get\+Output method returns the processed image while the process method processes the image suitable for finding the center of the contours. \end{DoxyCompactList}\item 
+file \hyperlink{control__module_8hpp}{control\+\_\+module.\+hpp}
+\begin{DoxyCompactList}\small\item\em D\+E\+S\+C\+R\+I\+P\+T\+I\+ON Header file for the class \char`\"{}\+Control\+Module\char`\"{}. This class is the control module which gets the readings from the Ultrasonic sensor as well as the center of the contour from the camera module. It processes this information and decides what action needs to be taken. \end{DoxyCompactList}\item 
+file \hyperlink{perception__module_8hpp}{perception\+\_\+module.\+hpp}
+\begin{DoxyCompactList}\small\item\em D\+E\+S\+C\+R\+I\+P\+T\+I\+ON Header file for the class \char`\"{}\+Perception\+Module\char`\"{}. This class gets the pre-\/processed image as an input and finds the contours in the image. It then finds the center of the contours which is the output of the class. This center is then passed on to the \char`\"{}\+Controller\char`\"{} module. \end{DoxyCompactList}\item 
+file \hyperlink{sensor_8hpp}{sensor.\+hpp}
+\begin{DoxyCompactList}\small\item\em D\+E\+S\+C\+R\+I\+P\+T\+I\+ON Header filer for the generic class \char`\"{}\+Sensor\char`\"{}. This is the base class which the required modules can derive from. The class has generic virtual methods get\+Output and process. The methods should be overloaded by the derived class. \end{DoxyCompactList}\item 
+file \hyperlink{ultrasonic__sensor_8hpp}{ultrasonic\+\_\+sensor.\+hpp}
+\begin{DoxyCompactList}\small\item\em D\+E\+S\+C\+R\+I\+P\+T\+I\+ON Header file for the class \char`\"{}\+Ultrasonic\+Sensor\char`\"{}. This class is derived from the base class \char`\"{}\+Sensor\char`\"{}. It has private members as max\+\_\+distance\+\_\+, is\+\_\+running\+\_\+ and output\+\_\+current\+\_\+distance\+\_\+. The get\+Output method returns the current distance reading while process method updates the current distance reading. \end{DoxyCompactList}\end{DoxyCompactItemize}

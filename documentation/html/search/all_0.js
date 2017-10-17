@@ -1,23 +1,5 @@
 var searchData=
 [
-  ['cam',['cam',['../class_test_camera.html#ac1abc17c2f7f776456583bc3a60db3a9',1,'TestCamera']]],
-  ['camera',['Camera',['../class_camera.html',1,'Camera'],['../class_camera.html#a01f94c3543f56ede7af49dc778f19331',1,'Camera::Camera()']]],
-  ['camera_2ecpp',['camera.cpp',['../camera_8cpp.html',1,'']]],
-  ['camera_2ehpp',['camera.hpp',['../camera_8hpp.html',1,'']]],
-  ['camera_5fobj_5f',['camera_obj_',['../class_perception_module.html#af5250548d1ab0ab5574aa17fd99104e4',1,'PerceptionModule']]],
-  ['cameraalive',['cameraAlive',['../class_perception_module.html#a034e0b3191be67f571aa284e0c30f749',1,'PerceptionModule']]],
-  ['center_5f',['center_',['../class_perception_module.html#a67ea0e9f666e33bce8d81bf22098d168',1,'PerceptionModule']]],
-  ['cm',['cm',['../class_test_control_module.html#a8b31203bb99dac1486c80c5c270673a3',1,'TestControlModule']]],
-  ['compilation_5fdatabase_5ffolder',['compilation_database_folder',['../_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'.ycm_extra_conf.py']]],
-  ['computeactioncenter',['computeActionCenter',['../class_control_module.html#a82c3a2a8d0140432b7dd364a4388fff2',1,'ControlModule']]],
-  ['computeactionpt',['computeActionPt',['../class_control_module.html#a8ded8dc8ebb29333bc104a26e835ce41',1,'ControlModule']]],
-  ['computelinepts',['computeLinePts',['../class_perception_module.html#a85bf112d0310cbc6a3160e3ea24f201e',1,'PerceptionModule']]],
-  ['contour_5fdetected_5f',['contour_detected_',['../class_perception_module.html#ab547d968284f6ab18a01b9776c54f38a',1,'PerceptionModule']]],
-  ['contour_5fimage_5f',['contour_image_',['../class_perception_module.html#a4c6044231fa94975cf299e5cd60ba447',1,'PerceptionModule']]],
-  ['contours_5f',['contours_',['../class_perception_module.html#ae611b010af7c0351eb889165198ee82a',1,'PerceptionModule']]],
-  ['control_5faction_5f',['control_action_',['../class_control_module.html#acf268f1e0e9d27bff61e89c681a739a3',1,'ControlModule']]],
-  ['control_5fmodule_2ecpp',['control_module.cpp',['../control__module_8cpp.html',1,'']]],
-  ['control_5fmodule_2ehpp',['control_module.hpp',['../control__module_8hpp.html',1,'']]],
-  ['control_5fmodule_5fuse_5fline_5fpts',['CONTROL_MODULE_USE_LINE_PTS',['../control__module_8cpp.html#a5040320de72493b68d04c64242c73035',1,'control_module.cpp']]],
-  ['controlmodule',['ControlModule',['../class_control_module.html',1,'ControlModule'],['../class_control_module.html#a260b3e131b096cf456aff663aebfa6b4',1,'ControlModule::ControlModule()']]]
+  ['_5f8ycm_5f_5fextra_5f_5fconf_5f8py',['_8ycm__extra__conf_8py',['../__8ycm____extra____conf__8py_8js.html#aa6ea92e9eb4656ea1436f921690e453c',1,'_8ycm__extra__conf_8py.js']]],
+  ['_5f8ycm_5f_5fextra_5f_5fconf_5f8py_2ejs',['_8ycm__extra__conf_8py.js',['../__8ycm____extra____conf__8py_8js.html',1,'']]]
 ];

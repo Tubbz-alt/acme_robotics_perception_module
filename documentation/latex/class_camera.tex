@@ -26,12 +26,14 @@ Inheritance diagram for Camera\+:
 \begin{DoxyCompactList}\small\item\em Constructor of the class \hyperlink{class_camera}{Camera}. Set is\+\_\+running\+\_\+ flag to true. \end{DoxyCompactList}\item 
 \hyperlink{class_camera_ad1897942d0ccf91052386388a497349f}{$\sim$\+Camera} ()
 \begin{DoxyCompactList}\small\item\em Destroys the object of the class. Set is\+\_\+running\+\_\+ to false. \end{DoxyCompactList}\item 
-auto \hyperlink{class_camera_a467955a89a912bfcae67ee0905a8cd86}{test\+Camera} () -\/$>$ bool
-\begin{DoxyCompactList}\small\item\em Function to test the working of camera. If the camera is not working it will set the vid\+\_\+cap\+\_\+ object to read default video. \end{DoxyCompactList}\item 
 auto \hyperlink{class_camera_ad9cc807466f09917e7f62d0d6c2e5b46}{set\+Default\+Video} () -\/$>$ bool
 \begin{DoxyCompactList}\small\item\em Sets the default Video\+Capture object. Call this function if camera is not working. \end{DoxyCompactList}\item 
+auto \hyperlink{class_camera_a467955a89a912bfcae67ee0905a8cd86}{test\+Camera} () -\/$>$ bool
+\begin{DoxyCompactList}\small\item\em Function to test the working of camera. If the camera is not working it will set the vid\+\_\+cap\+\_\+ object to read default video. \end{DoxyCompactList}\item 
 auto \hyperlink{class_camera_a3af312509cb2a7167ad0dc6280cd9207}{process} () -\/$>$ void
 \begin{DoxyCompactList}\small\item\em Override the virtual method \char`\"{}process\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This class processes the image so that Perception module can use it to determine the location of boundary. \end{DoxyCompactList}\item 
+auto \hyperlink{class_camera_a96de7932cff3f51163250efa2762bb10}{process} (const cv\+::\+Mat \&img) -\/$>$ void
+\begin{DoxyCompactList}\small\item\em Override the virtual method \char`\"{}process\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This class processes the image so that Perception module can use it to determine the location of boundary. This is an overloaded function which will take an input image and process it. \end{DoxyCompactList}\item 
 auto \hyperlink{class_camera_a1b3b1ece3344ea84754aff31f048d55e}{is\+Alive} () -\/$>$ bool
 \begin{DoxyCompactList}\small\item\em Override the virtual method \char`\"{}is\+Alive\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This method checks if the sensor is running or not. \end{DoxyCompactList}\item 
 auto \hyperlink{class_camera_a456e3f62048f2266e098489a068bda0e}{get\+Output} () -\/$>$ cv\+::\+Mat
@@ -50,7 +52,7 @@ bool \hyperlink{class_camera_a24d141601f7d0330b77b86505851bd0d}{is\+\_\+running\
 \subsection{Detailed Description}
 Class for camera sensor. This class is derived from the base Class \hyperlink{class_sensor}{Sensor}. 
 
-Definition at line 30 of file camera.\+hpp.
+Definition at line 33 of file camera.\+hpp.
 
 
 
@@ -114,7 +116,7 @@ Implements \hyperlink{class_sensor_abdc2eb130cb935cb090470d1fe6cc499}{Sensor$<$ 
 
 
 
-Definition at line 115 of file camera.\+cpp.
+Definition at line 100 of file camera.\+cpp.
 
 \index{Camera@{Camera}!is\+Alive@{is\+Alive}}
 \index{is\+Alive@{is\+Alive}!Camera@{Camera}}
@@ -136,7 +138,7 @@ Implements \hyperlink{class_sensor_a7ae0a8c02805d3b2b8306d01da2a2db8}{Sensor$<$ 
 
 
 
-Definition at line 111 of file camera.\+cpp.
+Definition at line 96 of file camera.\+cpp.
 
 \index{Camera@{Camera}!process@{process}}
 \index{process@{process}!Camera@{Camera}}
@@ -144,7 +146,7 @@ Definition at line 111 of file camera.\+cpp.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) -\/$>$ void\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_camera_a3af312509cb2a7167ad0dc6280cd9207}{}\label{class_camera_a3af312509cb2a7167ad0dc6280cd9207}
+) -\/$>$  void}\hypertarget{class_camera_a3af312509cb2a7167ad0dc6280cd9207}{}\label{class_camera_a3af312509cb2a7167ad0dc6280cd9207}
 
 
 Override the virtual method \char`\"{}process\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This class processes the image so that Perception module can use it to determine the location of boundary. 
@@ -152,13 +154,28 @@ Override the virtual method \char`\"{}process\char`\"{} of \hyperlink{class_sens
 \begin{DoxyReturn}{Returns}
 void\+: Return nothing. 
 \end{DoxyReturn}
+\index{Camera@{Camera}!process@{process}}
+\index{process@{process}!Camera@{Camera}}
+\subsubsection[{\texorpdfstring{process(const cv\+::\+Mat \&img) -\/$>$ void}{process(const cv::Mat &img) -> void}}]{\setlength{\rightskip}{0pt plus 5cm}auto Camera\+::process (
+\begin{DoxyParamCaption}
+\item[{const cv\+::\+Mat \&}]{img}
+\end{DoxyParamCaption}
+) -\/$>$ void}\hypertarget{class_camera_a96de7932cff3f51163250efa2762bb10}{}\label{class_camera_a96de7932cff3f51163250efa2762bb10}
 
 
-Implements \hyperlink{class_sensor_a6482196cbd29fb6bdc0b03d8af26d501}{Sensor$<$ cv\+::\+Mat $>$}.
+Override the virtual method \char`\"{}process\char`\"{} of \hyperlink{class_sensor}{Sensor} class. This class processes the image so that Perception module can use it to determine the location of boundary. This is an overloaded function which will take an input image and process it. 
 
 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file} & Filename of the image which is to be read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void\+: Return nothing. 
+\end{DoxyReturn}
 
-Definition at line 53 of file camera.\+cpp.
+
+Definition at line 55 of file camera.\+cpp.
 
 \index{Camera@{Camera}!set\+Default\+Video@{set\+Default\+Video}}
 \index{set\+Default\+Video@{set\+Default\+Video}!Camera@{Camera}}
@@ -204,14 +221,14 @@ Flag to test if the camera sensor is running or not.
 
 
 
-Definition at line 88 of file camera.\+hpp.
+Definition at line 101 of file camera.\+hpp.
 
 \index{Camera@{Camera}!output\+\_\+processed\+\_\+image\+\_\+@{output\+\_\+processed\+\_\+image\+\_\+}}
 \index{output\+\_\+processed\+\_\+image\+\_\+@{output\+\_\+processed\+\_\+image\+\_\+}!Camera@{Camera}}
 \subsubsection[{\texorpdfstring{output\+\_\+processed\+\_\+image\+\_\+}{output_processed_image_}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Camera\+::output\+\_\+processed\+\_\+image\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_camera_ae96ea8feb337852401830c24af293025}{}\label{class_camera_ae96ea8feb337852401830c24af293025}
 Process image which is the output of the class 
 
-Definition at line 86 of file camera.\+hpp.
+Definition at line 99 of file camera.\+hpp.
 
 \index{Camera@{Camera}!vid\+\_\+cap\+\_\+@{vid\+\_\+cap\+\_\+}}
 \index{vid\+\_\+cap\+\_\+@{vid\+\_\+cap\+\_\+}!Camera@{Camera}}
@@ -222,11 +239,11 @@ Video capture object of Open\+CV.
 
 
 
-Definition at line 85 of file camera.\+hpp.
+Definition at line 98 of file camera.\+hpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/\hyperlink{camera_8hpp}{camera.\+hpp}\item 
-/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/app/\hyperlink{camera_8cpp}{camera.\+cpp}\end{DoxyCompactItemize}
+/home/nrparikh/\+Desktop/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/\hyperlink{camera_8hpp}{camera.\+hpp}\item 
+/home/nrparikh/\+Desktop/acme\+\_\+robotics\+\_\+perception\+\_\+module/app/\hyperlink{camera_8cpp}{camera.\+cpp}\end{DoxyCompactItemize}

@@ -1,5 +1,5 @@
-\hypertarget{camera_8hpp}{}\section{/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/camera.hpp File Reference}
-\label{camera_8hpp}\index{/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/camera.\+hpp@{/home/nrparikh/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/camera.\+hpp}}
+\hypertarget{camera_8hpp}{}\section{/home/nrparikh/\+Desktop/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/camera.hpp File Reference}
+\label{camera_8hpp}\index{/home/nrparikh/\+Desktop/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/camera.\+hpp@{/home/nrparikh/\+Desktop/acme\+\_\+robotics\+\_\+perception\+\_\+module/include/camera.\+hpp}}
 
 
 D\+E\+S\+C\+R\+I\+P\+T\+I\+ON Header file for the class \char`\"{}\+Camera\char`\"{}. This class is derived from the base class \char`\"{}\+Sensor\char`\"{}. The private members of the class include vid\+\_\+cap\+\_\+, is\+\_\+running\+\_\+, and output\+\_\+processed\+\_\+image\+\_\+. The get\+Output method returns the processed image while the process method processes the image suitable for finding the center of the contours.  
@@ -10,6 +10,7 @@ D\+E\+S\+C\+R\+I\+P\+T\+I\+ON Header file for the class \char`\"{}\+Camera\char`
 {\ttfamily \#include $<$opencv2/imgproc.\+hpp$>$}\\*
 {\ttfamily \#include $<$opencv2/videoio.\+hpp$>$}\\*
 {\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
 {\ttfamily \#include \char`\"{}sensor.\+hpp\char`\"{}}\\*
 Include dependency graph for camera.\+hpp\+:
 \nopagebreak
@@ -32,6 +33,11 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
 class \hyperlink{class_camera}{Camera}
 \begin{DoxyCompactList}\small\item\em Class for camera sensor. This class is derived from the base Class \hyperlink{class_sensor}{Sensor}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{camera_8hpp_ac0543811059575e953053b2d1820d482}{D\+E\+B\+U\+G\+\_\+\+C\+A\+M\+E\+RA}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -43,3 +49,13 @@ nrparikh
 \begin{DoxyCopyright}{Copyright}
 M\+IT license 
 \end{DoxyCopyright}
+
+
+\subsection{Macro Definition Documentation}
+\index{camera.\+hpp@{camera.\+hpp}!D\+E\+B\+U\+G\+\_\+\+C\+A\+M\+E\+RA@{D\+E\+B\+U\+G\+\_\+\+C\+A\+M\+E\+RA}}
+\index{D\+E\+B\+U\+G\+\_\+\+C\+A\+M\+E\+RA@{D\+E\+B\+U\+G\+\_\+\+C\+A\+M\+E\+RA}!camera.\+hpp@{camera.\+hpp}}
+\subsubsection[{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+C\+A\+M\+E\+RA}{DEBUG_CAMERA}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+U\+G\+\_\+\+C\+A\+M\+E\+RA}\hypertarget{camera_8hpp_ac0543811059575e953053b2d1820d482}{}\label{camera_8hpp_ac0543811059575e953053b2d1820d482}
+
+
+Definition at line 27 of file camera.\+hpp.
+

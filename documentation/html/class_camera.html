@@ -34,7 +34,7 @@
    <div id="projectname">Acme Robotics: Perception Module
    &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Midterm project ENPM808X</div>
+   <div id="projectbrief">Midterm project for ENPM808X at UMD</div>
   </td>
  </tr>
  </tbody>
@@ -125,7 +125,7 @@ Inheritance diagram for Camera:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_camera__inherit__graph.png" border="0" usemap="#_camera_inherit__map" alt="Inheritance graph"/></div>
 <map name="_camera_inherit__map" id="_camera_inherit__map">
-<area shape="rect" id="node2" href="class_sensor.html" title="{Sensor\&lt; cv::Mat \&gt;\n||+ getOutput()\l+ process()\l+ isAlive()\l}" alt="" coords="31,5,162,112"/>
+<area shape="rect" id="node2" href="class_sensor.html" title="{Sensor\&lt; cv::Mat \&gt;\n||+ getOutput()\l+ isAlive()\l}" alt="" coords="31,5,162,97"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -137,15 +137,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1897942d0ccf91052386388a497349f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ad1897942d0ccf91052386388a497349f">~Camera</a> ()</td></tr>
 <tr class="memdesc:ad1897942d0ccf91052386388a497349f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the object of the class. Set is_running_ to false.  <a href="#ad1897942d0ccf91052386388a497349f">More...</a><br /></td></tr>
 <tr class="separator:ad1897942d0ccf91052386388a497349f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a467955a89a912bfcae67ee0905a8cd86"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a467955a89a912bfcae67ee0905a8cd86">testCamera</a> () -&gt; bool</td></tr>
-<tr class="memdesc:a467955a89a912bfcae67ee0905a8cd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to test the working of camera. If the camera is not working it will set the vid_cap_ object to read default video.  <a href="#a467955a89a912bfcae67ee0905a8cd86">More...</a><br /></td></tr>
-<tr class="separator:a467955a89a912bfcae67ee0905a8cd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9cc807466f09917e7f62d0d6c2e5b46"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ad9cc807466f09917e7f62d0d6c2e5b46">setDefaultVideo</a> () -&gt; bool</td></tr>
 <tr class="memdesc:ad9cc807466f09917e7f62d0d6c2e5b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default VideoCapture object. Call this function if camera is not working.  <a href="#ad9cc807466f09917e7f62d0d6c2e5b46">More...</a><br /></td></tr>
 <tr class="separator:ad9cc807466f09917e7f62d0d6c2e5b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a467955a89a912bfcae67ee0905a8cd86"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a467955a89a912bfcae67ee0905a8cd86">testCamera</a> () -&gt; bool</td></tr>
+<tr class="memdesc:a467955a89a912bfcae67ee0905a8cd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to test the working of camera. If the camera is not working it will set the vid_cap_ object to read default video.  <a href="#a467955a89a912bfcae67ee0905a8cd86">More...</a><br /></td></tr>
+<tr class="separator:a467955a89a912bfcae67ee0905a8cd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3af312509cb2a7167ad0dc6280cd9207"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a3af312509cb2a7167ad0dc6280cd9207">process</a> () -&gt; void</td></tr>
 <tr class="memdesc:a3af312509cb2a7167ad0dc6280cd9207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the virtual method "process" of <a class="el" href="class_sensor.html" title="Class for generic sensor. Particular sensor in the system will inherit this base class. ">Sensor</a> class. This class processes the image so that Perception module can use it to determine the location of boundary.  <a href="#a3af312509cb2a7167ad0dc6280cd9207">More...</a><br /></td></tr>
 <tr class="separator:a3af312509cb2a7167ad0dc6280cd9207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96de7932cff3f51163250efa2762bb10"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a96de7932cff3f51163250efa2762bb10">process</a> (const cv::Mat &amp;img) -&gt; void</td></tr>
+<tr class="memdesc:a96de7932cff3f51163250efa2762bb10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the virtual method "process" of <a class="el" href="class_sensor.html" title="Class for generic sensor. Particular sensor in the system will inherit this base class. ">Sensor</a> class. This class processes the image so that Perception module can use it to determine the location of boundary. This is an overloaded function which will take an input image and process it.  <a href="#a96de7932cff3f51163250efa2762bb10">More...</a><br /></td></tr>
+<tr class="separator:a96de7932cff3f51163250efa2762bb10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b3b1ece3344ea84754aff31f048d55e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a1b3b1ece3344ea84754aff31f048d55e">isAlive</a> () -&gt; bool</td></tr>
 <tr class="memdesc:a1b3b1ece3344ea84754aff31f048d55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the virtual method "isAlive" of <a class="el" href="class_sensor.html" title="Class for generic sensor. Particular sensor in the system will inherit this base class. ">Sensor</a> class. This method checks if the sensor is running or not.  <a href="#a1b3b1ece3344ea84754aff31f048d55e">More...</a><br /></td></tr>
 <tr class="separator:a1b3b1ece3344ea84754aff31f048d55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,7 +170,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for camera sensor. This class is derived from the base Class <a class="el" href="class_sensor.html" title="Class for generic sensor. Particular sensor in the system will inherit this base class. ">Sensor</a>. </p>
 
-<p>Definition at line <a class="el" href="camera_8hpp_source.html#l00030">30</a> of file <a class="el" href="camera_8hpp_source.html">camera.hpp</a>.</p>
+<p>Definition at line <a class="el" href="camera_8hpp_source.html#l00033">33</a> of file <a class="el" href="camera_8hpp_source.html">camera.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a01f94c3543f56ede7af49dc778f19331"></a>
 <div class="memitem">
@@ -236,7 +239,7 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sensor.html#abdc2eb130cb935cb090470d1fe6cc499">Sensor&lt; cv::Mat &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="camera_8cpp_source.html#l00115">115</a> of file <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+<p>Definition at line <a class="el" href="camera_8cpp_source.html#l00100">100</a> of file <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
 
 </div>
 </div>
@@ -266,37 +269,52 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_sensor.html#a7ae0a8c02805d3b2b8306d01da2a2db8">Sensor&lt; cv::Mat &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="camera_8cpp_source.html#l00111">111</a> of file <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+<p>Definition at line <a class="el" href="camera_8cpp_source.html#l00096">96</a> of file <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="a3af312509cb2a7167ad0dc6280cd9207"></a>
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">auto Camera::process </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; void</td>
+          <td> -&gt;  void</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Override the virtual method "process" of <a class="el" href="class_sensor.html" title="Class for generic sensor. Particular sensor in the system will inherit this base class. ">Sensor</a> class. This class processes the image so that Perception module can use it to determine the location of boundary. </p>
 <dl class="section return"><dt>Returns</dt><dd>void: Return nothing. </dd></dl>
 
-<p>Implements <a class="el" href="class_sensor.html#a6482196cbd29fb6bdc0b03d8af26d501">Sensor&lt; cv::Mat &gt;</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a96de7932cff3f51163250efa2762bb10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Camera::process </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>img</em></td><td>)</td>
+          <td> -&gt; void</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="camera_8cpp_source.html#l00053">53</a> of file <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
+<p>Override the virtual method "process" of <a class="el" href="class_sensor.html" title="Class for generic sensor. Particular sensor in the system will inherit this base class. ">Sensor</a> class. This class processes the image so that Perception module can use it to determine the location of boundary. This is an overloaded function which will take an input image and process it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Filename of the image which is to be read.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void: Return nothing. </dd></dl>
+
+<p>Definition at line <a class="el" href="camera_8cpp_source.html#l00055">55</a> of file <a class="el" href="camera_8cpp_source.html">camera.cpp</a>.</p>
 
 </div>
 </div>
@@ -359,7 +377,7 @@ Private Attributes</h2></td></tr>
 
 <p>Flag to test if the camera sensor is running or not. </p>
 
-<p>Definition at line <a class="el" href="camera_8hpp_source.html#l00088">88</a> of file <a class="el" href="camera_8hpp_source.html">camera.hpp</a>.</p>
+<p>Definition at line <a class="el" href="camera_8hpp_source.html#l00101">101</a> of file <a class="el" href="camera_8hpp_source.html">camera.hpp</a>.</p>
 
 </div>
 </div>
@@ -382,7 +400,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Process image which is the output of the class </p>
 
-<p>Definition at line <a class="el" href="camera_8hpp_source.html#l00086">86</a> of file <a class="el" href="camera_8hpp_source.html">camera.hpp</a>.</p>
+<p>Definition at line <a class="el" href="camera_8hpp_source.html#l00099">99</a> of file <a class="el" href="camera_8hpp_source.html">camera.hpp</a>.</p>
 
 </div>
 </div>
@@ -406,13 +424,13 @@ Private Attributes</h2></td></tr>
 
 <p>Video capture object of OpenCV. </p>
 
-<p>Definition at line <a class="el" href="camera_8hpp_source.html#l00085">85</a> of file <a class="el" href="camera_8hpp_source.html">camera.hpp</a>.</p>
+<p>Definition at line <a class="el" href="camera_8hpp_source.html#l00098">98</a> of file <a class="el" href="camera_8hpp_source.html">camera.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/nrparikh/acme_robotics_perception_module/include/<a class="el" href="camera_8hpp_source.html">camera.hpp</a></li>
-<li>/home/nrparikh/acme_robotics_perception_module/app/<a class="el" href="camera_8cpp_source.html">camera.cpp</a></li>
+<li>/home/nrparikh/Desktop/acme_robotics_perception_module/include/<a class="el" href="camera_8hpp_source.html">camera.hpp</a></li>
+<li>/home/nrparikh/Desktop/acme_robotics_perception_module/app/<a class="el" href="camera_8cpp_source.html">camera.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

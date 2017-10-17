@@ -1,6 +1,6 @@
-<map id="/home/nrparikh/acme_robotics_perception_module/include/control_module.hpp" name="/home/nrparikh/acme_robotics_perception_module/include/control_module.hpp">
-<area shape="rect" id="node8" href="$perception__module_8hpp.html" title="DESCRIPTION Header file for the class &quot;PerceptionModule&quot;. This class gets the pre&#45;processed image as ..." alt="" coords="367,124,523,151"/>
-<area shape="rect" id="node16" href="$ultrasonic__sensor_8hpp.html" title="DESCRIPTION Header file for the class &quot;UltrasonicSensor&quot;. This class is derived from the base class &quot;..." alt="" coords="47,199,196,225"/>
-<area shape="rect" id="node10" href="$camera_8hpp.html" title="DESCRIPTION Header file for the class &quot;Camera&quot;. This class is derived from the base class &quot;Sensor&quot;..." alt="" coords="551,199,641,225"/>
-<area shape="rect" id="node15" href="$sensor_8hpp.html" title="DESCRIPTION Header filer for the generic class &quot;Sensor&quot;. This is the base class which the required mo..." alt="" coords="270,273,357,300"/>
+<map id="/home/nrparikh/Desktop/acme_robotics_perception_module/include/control_module.hpp" name="/home/nrparikh/Desktop/acme_robotics_perception_module/include/control_module.hpp">
+<area shape="rect" id="node8" href="$perception__module_8hpp.html" title="DESCRIPTION Header file for the class &quot;PerceptionModule&quot;. This class gets the pre&#45;processed image as ..." alt="" coords="507,109,663,136"/>
+<area shape="rect" id="node16" href="$ultrasonic__sensor_8hpp.html" title="DESCRIPTION Header file for the class &quot;UltrasonicSensor&quot;. This class is derived from the base class &quot;..." alt="" coords="897,184,1046,211"/>
+<area shape="rect" id="node10" href="$camera_8hpp.html" title="DESCRIPTION Header file for the class &quot;Camera&quot;. This class is derived from the base class &quot;Sensor&quot;..." alt="" coords="385,184,475,211"/>
+<area shape="rect" id="node15" href="$sensor_8hpp.html" title="DESCRIPTION Header filer for the generic class &quot;Sensor&quot;. This is the base class which the required mo..." alt="" coords="736,259,823,285"/>
 </map>
